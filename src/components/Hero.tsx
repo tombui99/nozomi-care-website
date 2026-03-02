@@ -6,6 +6,14 @@ import { Phone, ArrowRight } from "lucide-react";
 export const Hero: React.FC = () => {
   return (
     <section className="relative px-6 py-12 md:py-24 overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
+      <div
+        className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-yellow/10 rounded-full blur-3xl -z-10 animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
@@ -15,20 +23,29 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col gap-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary self-start font-semibold text-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/10 text-brand-green self-start font-semibold text-sm border border-brand-green/20">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
             </span>
             40 năm kinh nghiệm từ Nhật Bản
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-[1.1]">
-            {content.hero.title.split(" ").map((word, i) => (
-              <span key={i} className={i > 2 ? "text-primary" : ""}>
-                {word}{" "}
-              </span>
-            ))}
+            {content.hero.title.split(" ").map((word, i) => {
+              const isPink = word === "Tình" || word === "yêu";
+              const isGreen = word === "Sự" || word === "Tự" || word === "lập";
+              return (
+                <span
+                  key={i}
+                  className={
+                    isPink ? "text-primary" : isGreen ? "text-brand-green" : ""
+                  }
+                >
+                  {word}{" "}
+                </span>
+              );
+            })}
           </h1>
 
           <p className="text-xl text-brand-dark/70 max-w-lg leading-relaxed">
@@ -41,8 +58,12 @@ export const Hero: React.FC = () => {
               <ArrowRight size={20} />
             </button>
             <div className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm">
-              <div className="p-3 bg-secondary/20 rounded-xl">
-                <Phone className="text-primary" size={32} />
+              <div className="p-3 bg-brand-yellow/20 rounded-xl">
+                <Phone
+                  className="text-brand-yellow-dark"
+                  style={{ color: "#B49300" }}
+                  size={32}
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-widest text-brand-dark/40 font-bold">
@@ -78,6 +99,13 @@ export const Hero: React.FC = () => {
                   Kinh nghiệm chăm sóc
                 </span>
               </div>
+            </div>
+
+            {/* Sub-label decoration matching branding */}
+            <div className="absolute bottom-6 left-6 right-6 bg-brand-green/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-white transform translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <p className="text-sm font-medium">
+                Chăm sóc chuẩn Nhật Bản - Tận tâm & Chuyên nghiệp
+              </p>
             </div>
           </div>
         </motion.div>

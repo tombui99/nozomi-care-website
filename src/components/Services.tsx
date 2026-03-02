@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Heart, UserCheck, GraduationCap, Sparkles } from "lucide-react";
+import { cn } from "../lib/utils";
 import content from "../data/content.json";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -36,31 +37,69 @@ export const Services: React.FC = () => {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
-          {content.services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.15,
-                ease: [0.21, 0.47, 0.32, 0.98],
-              }}
-              whileHover={{ y: -8 }}
-              className="p-10 rounded-4xl bg-white border border-primary/5 shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all group"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
-                {iconMap[service.icon]}
-              </div>
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">
-                {service.title}
-              </h3>
-              <p className="text-brand-dark/70 leading-relaxed font-medium">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
+          {content.services.map((service, index) => {
+            const themes = [
+              {
+                border: "border-primary/10",
+                iconBg: "bg-primary/10",
+                iconColor: "text-primary",
+                shadow: "shadow-primary/5",
+                hoverShadow: "hover:shadow-primary/20",
+              },
+              {
+                border: "border-brand-green/10",
+                iconBg: "bg-brand-green/10",
+                iconColor: "text-brand-green",
+                shadow: "shadow-brand-green/5",
+                hoverShadow: "hover:shadow-brand-green/20",
+              },
+              {
+                border: "border-brand-yellow/10",
+                iconBg: "bg-brand-yellow/10",
+                iconColor: "text-brand-yellow",
+                shadow: "shadow-brand-yellow/5",
+                hoverShadow: "hover:shadow-brand-yellow/20",
+              },
+            ];
+            const theme = themes[index % themes.length];
+
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.8,
+                  delay: index * 0.15,
+                  ease: [0.21, 0.47, 0.32, 0.98],
+                }}
+                whileHover={{ y: -8 }}
+                className={cn(
+                  "p-10 rounded-4xl bg-white border shadow-xl transition-all group",
+                  theme.border,
+                  theme.shadow,
+                  theme.hoverShadow,
+                )}
+              >
+                <div
+                  className={cn(
+                    "w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform",
+                    theme.iconBg,
+                    theme.iconColor,
+                  )}
+                >
+                  {iconMap[service.icon]}
+                </div>
+                <h3 className="text-2xl font-bold text-brand-dark mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-brand-dark/70 leading-relaxed font-medium">
+                  {service.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Philosophy Section (Bento Box inside) */}
