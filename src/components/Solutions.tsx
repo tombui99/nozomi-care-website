@@ -2,23 +2,53 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { cn } from "../lib/utils";
-import content from "../data/content.json";
+import { useTranslation } from "react-i18next";
 
 export const Solutions: React.FC = () => {
-  const { solutions } = content;
+  const { t } = useTranslation();
+
+  const solutionItems = [
+    {
+      id: 1,
+      title: t("solutions.items.rehab.title"),
+      description: t("solutions.items.rehab.description"),
+      image: "/services/rehab.png",
+      color: "from-[#FF1B6B] to-[#4C0519]",
+    },
+    {
+      id: 2,
+      title: t("solutions.items.dementia.title"),
+      bullets: t("solutions.items.dementia.bullets", {
+        returnObjects: true,
+      }) as string[],
+      image: "/services/dementia.png",
+      color: "bg-[#F9E13E]",
+    },
+    {
+      id: 3,
+      title: t("solutions.items.palliative.title"),
+      bullets: t("solutions.items.palliative.bullets", {
+        returnObjects: true,
+      }) as string[],
+      image: "/services/palliative.png",
+      color: "bg-[#4B8412]",
+    },
+  ];
 
   return (
     <section id="solutions" className="bg-white">
       <div className="max-w-full">
         <div className="text-center py-20 px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">
-            {solutions.title}
+            {t("solutions.title")}
           </h2>
-          <p className="text-xl text-brand-dark/60">{solutions.subtitle}</p>
+          <p className="text-xl text-brand-dark/60">
+            {t("solutions.subtitle")}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 w-full">
-          {solutions.items.map((item, index) => (
+          {solutionItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
@@ -32,7 +62,7 @@ export const Solutions: React.FC = () => {
               className="flex flex-col group h-full"
             >
               {/* Image Section */}
-              <div className="relative h-[400px] overflow-hidden">
+              <div className="relative h-100 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -43,10 +73,10 @@ export const Solutions: React.FC = () => {
               {/* Text Content Section */}
               <div
                 className={cn(
-                  "flex-1 p-12 text-white min-h-[400px] flex flex-col justify-center",
+                  "flex-1 p-12 text-white min-h-100 flex flex-col justify-center",
                   item.color.startsWith("bg-")
                     ? item.color
-                    : `bg-gradient-to-br ${item.color}`,
+                    : `bg-linear-to-br ${item.color}`,
                 )}
               >
                 <h3 className="text-2xl font-bold mb-6 leading-tight">

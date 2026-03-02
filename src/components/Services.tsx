@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Heart, UserCheck, GraduationCap, Sparkles } from "lucide-react";
 import { cn } from "../lib/utils";
-import content from "../data/content.json";
+import { useTranslation } from "react-i18next";
 
 const iconMap: Record<string, React.ReactNode> = {
   Heart: <Heart size={32} />,
@@ -11,6 +11,35 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export const Services: React.FC = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      id: 1,
+      title: t("services.items.rehab.title"),
+      description: t("services.items.rehab.description"),
+      icon: "Heart",
+    },
+    {
+      id: 2,
+      title: t("services.items.specialist.title"),
+      description: t("services.items.specialist.description"),
+      icon: "UserCheck",
+    },
+    {
+      id: 3,
+      title: t("services.items.training.title"),
+      description: t("services.items.training.description"),
+      icon: "GraduationCap",
+    },
+  ];
+
+  const philosophyPoints = [
+    { id: 1, text: t("services.philosophy.points.1") },
+    { id: 2, text: t("services.philosophy.points.2") },
+    { id: 3, text: t("services.philosophy.points.3") },
+  ];
+
   return (
     <section id="services" className="px-6 py-24 bg-brand-light/50">
       <div className="max-w-7xl mx-auto">
@@ -23,21 +52,20 @@ export const Services: React.FC = () => {
         >
           <div className="flex flex-col gap-4 max-w-2xl">
             <span className="text-primary font-bold uppercase tracking-widest text-sm flex items-center gap-2">
-              <Sparkles size={16} /> Dịch vụ tiêu chuẩn Nhật Bản
+              <Sparkles size={16} /> {t("services.badge")}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">
-              Năng lực Vượt trội từ tinh hoa 40 năm kinh nghiệm
+              {t("services.title")}
             </h2>
           </div>
           <p className="text-brand-dark/60 max-w-sm font-medium leading-relaxed">
-            Kỹ thuật cao từ Nhật Bản, đào tạo chuyển giao cho người Việt, giám
-            sát bởi chuyên gia người Nhật.
+            {t("services.description")}
           </p>
         </motion.div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
-          {content.services.map((service, index) => {
+          {services.map((service, index) => {
             const themes = [
               {
                 border: "border-primary/10",
@@ -110,18 +138,21 @@ export const Services: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
             <div className="flex flex-col gap-8">
               <span className="px-5 py-2 rounded-full bg-white/10 text-secondary self-start font-bold text-sm tracking-wider uppercase">
-                Triết lý chăm sóc
+                {t("services.philosophy.badge")}
               </span>
               <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                Triết lý <span className="text-primary">HOPE</span>
+                {t("services.philosophy.title").split(" ")[0]}{" "}
+                <span className="text-primary">
+                  {t("services.philosophy.title").split(" ")[1]}
+                </span>
               </h2>
               <p className="text-2xl text-white/80 font-medium max-w-md">
-                {content.philosophy.description}
+                {t("services.philosophy.description")}
               </p>
             </div>
 
             <div className="flex flex-col gap-6">
-              {content.philosophy.points.map((point) => (
+              {philosophyPoints.map((point) => (
                 <motion.div
                   key={point.id}
                   initial={{ opacity: 0, x: 20 }}
@@ -129,7 +160,7 @@ export const Services: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
+                  <div className="shrink-0 w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
                     {point.id}
                   </div>
                   <p className="text-lg text-white/90 font-medium leading-relaxed">

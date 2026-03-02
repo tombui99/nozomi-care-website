@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import content from "../data/content.json";
 import { Phone, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative px-6 py-12 md:py-24 overflow-hidden">
       {/* Background Decorative Elements */}
@@ -28,33 +30,46 @@ export const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
             </span>
-            40 năm kinh nghiệm từ Nhật Bản
+            {t("hero.badge")}
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-[1.1]">
-            {content.hero.title.split(" ").map((word, i) => {
-              const isPink = word === "Tình" || word === "yêu";
-              const isGreen = word === "Sự" || word === "Tự" || word === "lập";
-              return (
-                <span
-                  key={i}
-                  className={
-                    isPink ? "text-primary" : isGreen ? "text-brand-green" : ""
-                  }
-                >
-                  {word}{" "}
-                </span>
-              );
-            })}
+            {t("hero.title")
+              .split(" ")
+              .map((word, i) => {
+                const isPink =
+                  word === "Tình" || word === "yêu" || word === "Love";
+                const isGreen =
+                  word === "Sự" ||
+                  word === "Tự" ||
+                  word === "lập" ||
+                  word === "Self-reliance" ||
+                  word === "愛" ||
+                  word === "自立";
+                return (
+                  <span
+                    key={i}
+                    className={
+                      isPink
+                        ? "text-primary"
+                        : isGreen
+                          ? "text-brand-green"
+                          : ""
+                    }
+                  >
+                    {word}{" "}
+                  </span>
+                );
+              })}
           </h1>
 
           <p className="text-xl text-brand-dark/70 max-w-lg leading-relaxed">
-            {content.hero.subtitle}
+            {t("hero.subtitle")}
           </p>
 
           <div className="flex flex-wrap items-center gap-6">
             <button className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1">
-              {content.hero.cta}
+              {t("hero.cta")}
               <ArrowRight size={20} />
             </button>
             <div className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm">
@@ -67,10 +82,10 @@ export const Hero: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-widest text-brand-dark/40 font-bold">
-                  Tư vấn
+                  {t("common.contact_cta")}
                 </span>
                 <span className="text-sm font-bold text-brand-dark">
-                  {content.hero.qrLabel}
+                  {t("hero.qr_label")}
                 </span>
               </div>
             </div>
@@ -94,18 +109,23 @@ export const Hero: React.FC = () => {
             {/* Floating Stats Card */}
             <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-white/50 z-20">
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-bold text-primary">40 năm</span>
+                <span className="text-3xl font-bold text-primary">
+                  40{" "}
+                  {t("navigation.about").includes("About")
+                    ? "years"
+                    : t("navigation.about").includes("会社")
+                      ? "年"
+                      : "năm"}
+                </span>
                 <span className="text-[10px] uppercase tracking-widest text-brand-dark/60 font-bold">
-                  Kinh nghiệm chăm sóc
+                  {t("hero.stats_label")}
                 </span>
               </div>
             </div>
 
             {/* Sub-label decoration matching branding */}
             <div className="absolute bottom-6 left-6 right-6 bg-brand-green/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-white transform translate-y-2 opacity-0 group-hover:opacity-100 transition-all duration-500">
-              <p className="text-sm font-medium">
-                Chăm sóc chuẩn Nhật Bản - Tận tâm & Chuyên nghiệp
-              </p>
+              <p className="text-sm font-medium">{t("hero.floating_label")}</p>
             </div>
           </div>
         </motion.div>

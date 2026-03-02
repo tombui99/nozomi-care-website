@@ -1,0 +1,97 @@
+{
+  "brand": {
+    "name": "Nozomi Care",
+    "tagline": "The Essence of Care from Japan",
+    "description": "40 years of experience in elderly care and self-reliance support from Nozomi Group - Japan."
+  },
+  "navigation": {
+    "about": "About Us",
+    "services": "Services",
+    "philosophy": "Philosophy",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "40 years of experience from Japan",
+    "title": "Care with Love and Self-reliance",
+    "subtitle": "Supporting the elderly to live happily, healthily, and maintain independence with Japanese standards in Vietnam.",
+    "cta": "Learn More",
+    "qr_label": "Call for Consultation",
+    "stats_label": "Experience in Care",
+    "floating_label": "Japanese Standard Care - Heartfelt & Professional"
+  },
+  "services": {
+    "badge": "Japanese Standard Service",
+    "title": "Superior Capability from 40 Years of Experience",
+    "description": "High-level techniques from Japan, transferred to Vietnamese staff, and supervised by Japanese experts.",
+    "items": {
+      "rehab": {
+        "title": "Independence Support",
+        "description": "Advanced techniques from Japan help the elderly maintain daily living activities."
+      },
+      "specialist": {
+        "title": "Japanese Experts",
+        "description": "Direct supervision by experienced experts from Nozomi Group Japan."
+      },
+      "training": {
+        "title": "Transfer Training",
+        "description": "Vietnamese staff are thoroughly trained according to strict Japanese standards."
+      }
+    },
+    "philosophy": {
+      "badge": "Care Philosophy",
+      "title": "HOPE Philosophy",
+      "description": "Respecting INDEPENDENCE and bringing HOPE to the elderly.",
+      "points": {
+        "1": "Do not 'do for them', but listen and support so the elderly can do it themselves.",
+        "2": "Every personalized plan originates from the elderly's own wishes and motivations.",
+        "3": "Active recovery: Support for physical and mental rehabilitation."
+      }
+    }
+  },
+  "solutions": {
+    "title": "COMPREHENSIVE COMPANIONSHIP ON EVERY JOURNEY",
+    "subtitle": "We provide specialized solutions for each stage",
+    "items": {
+      "rehab": {
+        "title": "SPECIALIZED REHABILITATION",
+        "description": "For post-stroke and post-surgery recovery, featuring the Polaris Rehabilitation System (Japanese standard) and personal trainers."
+      },
+      "dementia": {
+        "title": "DEMENTIA CARE",
+        "bullets": [
+          "Open, safe, and quiet spaces.",
+          "Automatic sleep monitoring system.",
+          "24/7 staffing.",
+          "Emotional therapy activities to minimize behavioral symptoms."
+        ]
+      },
+      "palliative": {
+        "title": "END-OF-LIFE CARE",
+        "bullets": [
+          "Care for anxiety reduction, focusing on comfort and peace.",
+          "Health management and monitoring by nursing staff.",
+          "Close medical connection with doctors and hospitals."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "links_title": "Quick Links",
+    "contact_title": "Contact Information",
+    "newsletter_title": "Newsletter",
+    "newsletter_desc": "Subscribe to receive the latest updates from Nozomi Care.",
+    "newsletter_placeholder": "Your Email",
+    "newsletter_button": "Subscribe",
+    "copyright": "© {{year}} {{brand}}. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": {
+      "address": "Project launching soon in Vietnam",
+      "email": "info@nozomi-care.vn",
+      "phone": "Updating"
+    }
+  },
+  "common": {
+    "contact_cta": "Contact Now"
+  }
+}

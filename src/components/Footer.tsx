@@ -1,7 +1,16 @@
 import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import content from "../data/content.json";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
+  const navItems = [
+    { label: t("navigation.about"), href: "#about" },
+    { label: t("navigation.services"), href: "#services" },
+    { label: t("navigation.philosophy"), href: "#philosophy" },
+    { label: t("navigation.contact"), href: "#contact" },
+  ];
+
   return (
     <footer className="bg-brand-dark text-white pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -18,7 +27,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-white/60 leading-relaxed font-medium">
-              {content.brand.description}
+              {t("brand.description")}
             </p>
             <div className="flex gap-4">
               {[Github, Twitter, Linkedin].map((Icon, i) => (
@@ -38,9 +47,9 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-lg font-bold">Liên kết</h4>
+            <h4 className="text-lg font-bold">{t("footer.links_title")}</h4>
             <nav className="flex flex-col gap-4">
-              {content.navigation.map((item) => (
+              {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
@@ -54,24 +63,24 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-lg font-bold">Thông tin Liên hệ</h4>
+            <h4 className="text-lg font-bold">{t("footer.contact_title")}</h4>
             <div className="flex flex-col gap-4">
               <div className="flex gap-4">
-                <MapPin className="text-primary flex-shrink-0" size={20} />
+                <MapPin className="text-primary shrink-0" size={20} />
                 <span className="text-white/60 font-medium">
-                  {content.contact.address}
+                  {t("footer.contact.address")}
                 </span>
               </div>
               <div className="flex gap-4">
-                <Phone className="text-primary flex-shrink-0" size={20} />
+                <Phone className="text-primary shrink-0" size={20} />
                 <span className="text-white/60 font-medium">
-                  {content.contact.phone}
+                  {t("footer.contact.phone")}
                 </span>
               </div>
               <div className="flex gap-4">
-                <Mail className="text-primary flex-shrink-0" size={20} />
+                <Mail className="text-primary shrink-0" size={20} />
                 <span className="text-white/60 font-medium">
-                  {content.contact.email}
+                  {t("footer.contact.email")}
                 </span>
               </div>
             </div>
@@ -79,18 +88,20 @@ export const Footer = () => {
 
           {/* Newsletter */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-lg font-bold">Nhận thông tin</h4>
+            <h4 className="text-lg font-bold">
+              {t("footer.newsletter_title")}
+            </h4>
             <p className="text-white/60 font-medium">
-              Đăng ký để nhận những cập nhật mới nhất từ Nozomi Care.
+              {t("footer.newsletter_desc")}
             </p>
             <div className="flex flex-col gap-3">
               <input
                 type="email"
-                placeholder="Email của bạn"
+                placeholder={t("footer.newsletter_placeholder")}
                 className="w-full px-5 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:border-primary transition-colors text-white"
               />
               <button className="w-full py-3 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 transition-all">
-                Đăng ký
+                {t("footer.newsletter_button")}
               </button>
             </div>
           </div>
@@ -98,15 +109,17 @@ export const Footer = () => {
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-sm font-medium">
-            © {new Date().getFullYear()} {content.brand.name}. Tất cả các quyền
-            được bảo lưu.
+            {t("footer.copyright", {
+              year: new Date().getFullYear(),
+              brand: t("brand.name"),
+            })}
           </p>
           <div className="flex gap-8 text-sm text-white/40 font-medium">
             <a href="#" className="hover:text-white transition-colors">
-              Chính sách Bảo mật
+              {t("footer.privacy")}
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Điều khoản Dịch vụ
+              {t("footer.terms")}
             </a>
           </div>
         </div>
