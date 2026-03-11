@@ -9,7 +9,9 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: "vi",
-    debug: true,
+    supportedLngs: ["vi", "en", "ja"],
+    nonExplicitSupportedLngs: true,
+    debug: false,
     interpolation: {
       escapeValue: false,
     },

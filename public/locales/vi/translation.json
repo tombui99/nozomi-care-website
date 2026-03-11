@@ -7,7 +7,7 @@
   "navigation": {
     "about": "Giới thiệu",
     "services": "Dịch vụ",
-    "philosophy": "Triết lý",
+    "news": "Tin tức",
     "contact": "Liên hệ"
   },
   "hero": {
@@ -93,5 +93,10 @@
   },
   "common": {
     "contact_cta": "Liên hệ ngay"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "zalo": "Zalo",
+    "linkedin": "LinkedIn"
   }
 }

@@ -27,12 +27,14 @@ export const Header = () => {
   const navItems = [
     { label: t("navigation.about"), href: "#about" },
     { label: t("navigation.services"), href: "#services" },
-    { label: t("navigation.philosophy"), href: "#philosophy" },
+    { label: t("navigation.news"), href: "#news" },
     { label: t("navigation.contact"), href: "#contact" },
   ];
 
   const currentLanguage =
-    languages.find((l) => l.code === i18n.language) || languages[0];
+    languages.find(
+      (l) => l.code === (i18n.resolvedLanguage || i18n.language),
+    ) || languages[0];
 
   const changeLanguage = (code: string) => {
     i18n.changeLanguage(code);
