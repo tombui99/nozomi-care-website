@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { CheckCircle2, ArrowDown } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import { useRef } from "react";
 
 export const AboutNozomi = () => {
@@ -12,50 +12,37 @@ export const AboutNozomi = () => {
   return (
     <div ref={containerRef} className="bg-white text-brand-dark">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/about_hero_sharp.png"
-            alt="Nozomi Care"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-1 rounded-full border border-white/30 backdrop-blur-md text-sm font-medium mb-6"
-          >
-            {t("navigation.about")}
-          </motion.span>
-          <motion.h1
+      <section className="relative px-6 py-32 bg-brand-light">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight"
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
           >
-            {t("brand.tagline")}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed"
-          >
-            {t("brand.description")}
-          </motion.p>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6">
+              <Sparkles size={16} />
+              {t("navigation.about")}
+            </span>
+            <h1 className="text-3xl md:text-5xl font-bold text-brand-dark mb-8 leading-tight">
+              {t("brand.tagline")}
+            </h1>
+            <p className="text-xl text-brand-dark/70 font-medium leading-relaxed max-w-2xl">
+              {t("brand.description")}
+            </p>
+          </motion.div>
         </div>
 
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-primary/5 to-transparent pointer-events-none" />
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
-        >
-          <ArrowDown size={32} />
-        </motion.div>
+          animate={{
+            scale: [1, 1.1, 1],
+            rotate: [0, 5, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+        />
       </section>
 
       {/* Section 01: Pioneering Unit */}

@@ -6,6 +6,7 @@ import { Services } from "./components/Services";
 import { Solutions } from "./components/Solutions";
 import { Footer } from "./components/Footer";
 import { AboutNozomi } from "./components/AboutNozomi";
+import ServicesPage from "./components/ServicesPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 function Home() {
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutNozomi />} />
+          <Route path="/services" element={<ServicesPage />} />
         </Routes>
         <Footer />
       </Layout>
