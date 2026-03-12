@@ -13,7 +13,7 @@ export const Solutions: React.FC = () => {
       title: t("solutions.items.rehab.title"),
       description: t("solutions.items.rehab.description"),
       image: "/services/rehab.png",
-      color: "from-[#FF1B6B] to-[#4C0519]",
+      color: "bg-brand-yellow-dark",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export const Solutions: React.FC = () => {
         returnObjects: true,
       }) as string[],
       image: "/services/dementia.png",
-      color: "bg-[#F9E13E]",
+      color: "bg-primary",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export const Solutions: React.FC = () => {
         returnObjects: true,
       }) as string[],
       image: "/services/palliative.png",
-      color: "bg-[#4B8412]",
+      color: "bg-brand-green",
     },
   ];
 

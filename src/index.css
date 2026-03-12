@@ -8,6 +8,7 @@
   --color-brand-green: #4b8412;
   --color-brand-green-light: #f0f7e6;
   --color-brand-yellow: #f9e13e;
+  --color-brand-yellow-dark: #b49300;
   --color-brand-yellow-light: #fff9e6;
 
   --font-sans: "Inter", system-ui, sans-serif;
@@ -24,6 +25,19 @@
   to {
     background-position: -200% 0;
   }
+}
+
+@keyframes ring {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(-15deg); }
+  20% { transform: rotate(15deg); }
+  30% { transform: rotate(-12deg); }
+  40% { transform: rotate(12deg); }
+  50% { transform: rotate(-8deg); }
+  60% { transform: rotate(8deg); }
+  70% { transform: rotate(-4deg); }
+  80% { transform: rotate(4deg); }
+  90% { transform: rotate(0deg); }
 }
 
 :root {

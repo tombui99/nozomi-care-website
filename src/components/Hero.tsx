@@ -36,31 +36,51 @@ export const Hero: React.FC = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-[1.1]">
             {t("hero.title")
               .split(" ")
-              .map((word, i) => {
-                const isPink =
-                  word === "Tình" || word === "yêu" || word === "Love";
-                const isGreen =
-                  word === "Sự" ||
-                  word === "Tự" ||
-                  word === "lập" ||
-                  word === "Self-reliance" ||
-                  word === "愛" ||
-                  word === "自立";
-                return (
-                  <span
-                    key={i}
-                    className={
-                      isPink
-                        ? "text-primary"
-                        : isGreen
-                          ? "text-brand-green"
-                          : ""
+              .reduce<{ words: string[]; groups: React.ReactNode[] }>(
+                (acc, word, i, arr) => {
+                  const isPink =
+                    word === "Tình" || word === "yêu" || word === "Love";
+                  const isGreen =
+                    word === "Sự" ||
+                    word === "Tự" ||
+                    word === "lập" ||
+                    word === "Self-reliance" ||
+                    word === "愛" ||
+                    word === "自立";
+
+                  if (isGreen) {
+                    acc.words.push(word);
+                    // If next word is also green keep collecting, otherwise flush
+                    const nextIsGreen =
+                      i + 1 < arr.length &&
+                      (arr[i + 1] === "Sự" ||
+                        arr[i + 1] === "Tự" ||
+                        arr[i + 1] === "lập" ||
+                        arr[i + 1] === "Self-reliance" ||
+                        arr[i + 1] === "愛" ||
+                        arr[i + 1] === "自立");
+                    if (!nextIsGreen) {
+                      acc.groups.push(
+                        <span key={i} className="text-brand-green whitespace-nowrap">
+                          {acc.words.join(" ")}{" "}
+                        </span>
+                      );
+                      acc.words = [];
                     }
-                  >
-                    {word}{" "}
-                  </span>
-                );
-              })}
+                  } else {
+                    acc.groups.push(
+                      <span
+                        key={i}
+                        className={isPink ? "text-primary" : ""}
+                      >
+                        {word}{" "}
+                      </span>
+                    );
+                  }
+                  return acc;
+                },
+                { words: [], groups: [] }
+              ).groups}
           </h1>
 
           <p className="text-xl text-brand-dark/70 max-w-lg leading-relaxed">
@@ -75,7 +95,7 @@ export const Hero: React.FC = () => {
             <div className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm">
               <div className="p-3 bg-brand-yellow/20 rounded-xl">
                 <Phone
-                  className="text-brand-yellow-dark"
+                  className="text-brand-yellow-dark animate-[ring_1s_ease-in-out_infinite]"
                   style={{ color: "#B49300" }}
                   size={32}
                 />
@@ -107,7 +127,7 @@ export const Hero: React.FC = () => {
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
             />
             {/* Floating Stats Card */}
-            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-white/50 z-20">
+            <div className="absolute bottom-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-2xl border border-white/50 z-20">
               <div className="flex flex-col gap-1">
                 <span className="text-3xl font-bold text-primary">
                   40{" "}

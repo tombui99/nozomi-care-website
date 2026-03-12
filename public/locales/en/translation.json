@@ -93,5 +93,69 @@
   },
   "common": {
     "contact_cta": "Contact Now"
+  },
+  "about_nozomi": {
+    "pioneering": {
+      "title": "NOT JUST A CENTER, BUT A PIONEERING UNIT",
+      "items": {
+        "1": {
+          "title": "1. Japanese Standard Expertise",
+          "bullets": [
+            "Directly supervised and trained by Japanese management and specialists.",
+            "Applying examination and care standards based on the 6-level scale of the Nozomi Method."
+          ]
+        },
+        "2": {
+          "title": "2. Superior Facilities",
+          "bullets": [
+            "Spaces and equipment designed for maximum safety, friendliness, and ease of use for the elderly.",
+            "Modern Polaris Rehabilitation equipment following Japanese standards with personalized coaching.",
+            "24/7 automatic sleep monitoring system."
+          ]
+        },
+        "3": {
+          "title": "3. Ensuring nutritional quality and recovery through dietary support",
+          "bullets": [
+            "Japanese-Vietnamese nutrition blend.",
+            "Advised by nutrition experts.",
+            "Applying recovery exercises through dietary habits."
+          ]
+        },
+        "4": {
+          "title": "4. Person-Centered Care",
+          "bullets": [
+            "Strong commitment to respecting individual wishes."
+          ]
+        },
+        "5": {
+          "title": "5. Professional Training System",
+          "bullets": [
+            "Building Japanese-standard training pathways in Vietnam, laying the foundation for high-quality human resources development in the industry."
+          ]
+        }
+      }
+    },
+    "vision": {
+      "title": "CREATING VISION AND SPREADING VALUES",
+      "items": {
+        "1": {
+          "title": "1. Becoming a Model Implementation",
+          "description": "Not just a care facility, but a practical model for improving quality of life, increasing longevity, and motivation for the elderly in Vietnam."
+        },
+        "2": {
+          "title": "2. Japanese-Standard Human Resource Training",
+          "description": "Building and operating a specialized training system to standardize and elevate the skills of the Vietnamese nursing team to international standards."
+        },
+        "3": {
+          "title": "3. Creating a Japan-Vietnam Cycle",
+          "description": "Architecting a sustainable cycle in human resource training and development, from training caregivers to developing future leaders and managers for the Vietnamese nursing market."
+        }
+      }
+    }
+  },
+  "social": {
+    "facebook": "Facebook",
+    "zalo": "Zalo",
+    "google_maps": "Google Maps"
   }
 }

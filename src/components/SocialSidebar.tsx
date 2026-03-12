@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Linkedin } from 'lucide-react';
+import { Facebook, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
@@ -20,11 +20,11 @@ const socialLinks = [
     translationKey: 'social.zalo'
   },
   {
-    name: 'LinkedIn',
-    icon: Linkedin,
-    href: 'https://linkedin.com',
-    color: 'bg-[#0077B5]',
-    translationKey: 'social.linkedin'
+    name: 'Google Maps',
+    icon: MapPin,
+    href: 'https://maps.google.com',
+    color: 'bg-[#EA4335]',
+    translationKey: 'social.google_maps'
   }
 ];
 

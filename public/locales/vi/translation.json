@@ -94,9 +94,68 @@
   "common": {
     "contact_cta": "Liên hệ ngay"
   },
+  "about_nozomi": {
+    "pioneering": {
+      "title": "KHÔNG CHỈ LÀ MỘT TRUNG TÂM, MÀ LÀ MỘT ĐƠN VỊ TIÊN PHONG",
+      "items": {
+        "1": {
+          "title": "1. Chuyên Môn Chuẩn Nhật Bản",
+          "bullets": [
+            "Đội ngũ quản lý và chuyên gia Nhật Bản trực tiếp giám sát và đào tạo.",
+            "Áp dụng tiêu chuẩn thăm khám và chăm sóc dựa trên thang đo 6 cấp độ chăm sóc theo Phương pháp Nozomi."
+          ]
+        },
+        "2": {
+          "title": "2. Cơ Sở Vật Chất Ưu Việt",
+          "bullets": [
+            "Không gian và trang thiết bị được thiết kế an toàn tối đa, thân thiện, dễ sử dụng với người cao tuổi.",
+            "Hệ thống máy tập Phục hồi chức năng Polaris hiện đại theo tiêu chuẩn Nhật Bản với huấn luyện viên cá nhân hóa.",
+            "Hệ thống tự động giám sát giấc ngủ 24/7."
+          ]
+        },
+        "3": {
+          "title": "3. Đảm bảo chất lượng dinh dưỡng và hỗ trợ phục hồi ngay trong cách thức ăn uống",
+          "bullets": [
+            "Hòa trộn Dinh dưỡng Nhật - Việt.",
+            "Cố vấn bởi chuyên gia dinh dưỡng.",
+            "Áp dụng các bài tập phục hồi thông qua nếp ăn uống."
+          ]
+        },
+        "4": {
+          "title": "4. Con Người là Trung Tâm",
+          "bullets": [
+            "Cam kết mạnh mẽ với triết lý tôn trọng nguyện vọng cá nhân."
+          ]
+        },
+        "5": {
+          "title": "5. Hệ Thống Đào Tạo Chuyên Nghiệp",
+          "bullets": [
+            "Xây dựng lộ trình đào tạo chuẩn Nhật ngay tại Việt Nam, đặt nền móng để phát triển nguồn nhân lực chất lượng cao cho ngành."
+          ]
+        }
+      }
+    },
+    "vision": {
+      "title": "TẦM NHÌN KIẾN TẠO VÀ LAN TỎA GIÁ TRỊ",
+      "items": {
+        "1": {
+          "title": "1. Trở Thành Mô Hình Kiểu Mẫu",
+          "description": "Không chỉ là một cơ sở chăm sóc, mà là hình mẫu thực tế về nâng cao chất lượng sống, tăng tuổi thọ và động lực sống cho người cao tuổi tại Việt Nam."
+        },
+        "2": {
+          "title": "2. Đào Tạo Nhân Sự Đạt Chuẩn Nhật Bản",
+          "description": "Xây dựng và vận hành hệ thống đào tạo chuyên sâu, nhằm chuẩn hóa và nâng tầm kỹ năng của đội ngũ điều dưỡng Việt Nam lên tiêu chuẩn quốc tế."
+        },
+        "3": {
+          "title": "3. Tạo Vòng Tuần Hoàn Nhật - Việt",
+          "description": "Kiến tạo một vòng tuần hoàn bền vững trong đào tạo và phát triển nhân sự, từ việc đào tạo điều dưỡng viên đến phát triển các nhà lãnh đạo, quản lý cơ sở điều dưỡng tương lai cho thị trường Việt Nam."
+        }
+      }
+    }
+  },
   "social": {
     "facebook": "Facebook",
     "zalo": "Zalo",
-    "linkedin": "LinkedIn"
+    "google_maps": "Google Maps"
   }
 }

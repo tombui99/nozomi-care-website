@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
 
 const languages = [
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
@@ -15,6 +16,7 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +27,10 @@ export const Header = () => {
   }, []);
 
   const navItems = [
-    { label: t("navigation.about"), href: "#about" },
-    { label: t("navigation.services"), href: "#services" },
-    { label: t("navigation.news"), href: "#news" },
-    { label: t("navigation.contact"), href: "#contact" },
+    { label: t("navigation.about"), href: "/about" },
+    { label: t("navigation.services"), href: "/#services" },
+    { label: t("navigation.news"), href: "/#news" },
+    { label: t("navigation.contact"), href: "/#contact" },
   ];
 
   const currentLanguage =
@@ -50,24 +52,29 @@ export const Header = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img
             src="/logo.png"
             alt="Nozomi Care Logo"
             className="h-12 w-auto object-contain"
           />
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
-              className="text-sm font-semibold text-brand-dark/80 hover:text-primary transition-colors"
+              to={item.href}
+              className={cn(
+                "text-sm font-semibold transition-colors",
+                location.pathname === item.href
+                  ? "text-primary"
+                  : "text-brand-dark/80 hover:text-primary",
+              )}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
 
           {/* Language Selector */}
@@ -178,14 +185,17 @@ export const Header = () => {
           className="absolute top-full left-0 right-0 bg-white border-t border-gray-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
-              className="text-lg font-medium text-brand-dark"
+              to={item.href}
+              className={cn(
+                "text-lg font-medium",
+                location.pathname === item.href ? "text-primary" : "text-brand-dark",
+              )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <button className="w-full py-4 bg-primary text-white font-bold rounded-2xl">
             {t("common.contact_cta")}

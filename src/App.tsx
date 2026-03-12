@@ -1,19 +1,36 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Services } from "./components/Services";
 import { Solutions } from "./components/Solutions";
 import { Footer } from "./components/Footer";
+import { AboutNozomi } from "./components/AboutNozomi";
+import { ScrollToTop } from "./components/ScrollToTop";
 
-function App() {
+function Home() {
   return (
-    <Layout>
-      <Header />
+    <>
       <Hero />
       <Services />
       <Solutions />
-      <Footer />
-    </Layout>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Layout>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutNozomi />} />
+        </Routes>
+        <Footer />
+      </Layout>
+    </Router>
   );
 }
 
