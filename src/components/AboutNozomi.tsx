@@ -11,9 +11,9 @@ export const AboutNozomi = () => {
   const visionItems = ["1", "2", "3"];
 
   return (
-    <div ref={containerRef} className="bg-white text-brand-dark">
+    <div ref={containerRef} className="bg-white text-brand-dark overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative px-6 py-32 bg-brand-light">
+      <section className="relative px-6 py-32 bg-brand-light overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

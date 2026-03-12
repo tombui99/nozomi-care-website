@@ -199,7 +199,10 @@
       "save": "Save Article",
       "publish": "Publish Article",
       "update": "Update Article",
-      "saving": "Saving..."
+      "saving": "Saving...",
+      "copy_link": "Copy Link",
+      "copied": "Copied!",
+      "error_saving": "An error occurred while saving the article."
     }
   }
 }

@@ -6,7 +6,7 @@
   },
   "navigation": {
     "home": "Trang chủ",
-    "about": "Giới thiệu",
+    "about": "Về chúng tôi",
     "services": "Dịch vụ",
     "news": "Tin tức",
     "contact": "Liên hệ"
@@ -199,7 +199,10 @@
       "save": "Lưu bài viết",
       "publish": "Đăng bài viết",
       "update": "Cập nhật bài viết",
-      "saving": "Đang lưu..."
+      "saving": "Đang lưu...",
+      "copy_link": "Sao chép liên kết",
+      "copied": "Đã sao chép!",
+      "error_saving": "Có lỗi xảy ra khi lưu bài viết."
     }
   }
 }
