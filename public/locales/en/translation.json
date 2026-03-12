@@ -156,7 +156,50 @@
   },
   "social": {
     "facebook": "Facebook",
-    "zalo": "Zalo",
+    "phone": "Hotline: 090 453 38 58",
     "google_maps": "Google Maps"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "admin_only": "Admin Only",
+    "unauthorized": "This email is not authorized as an admin."
+  },
+  "news": {
+    "title": "News & Events",
+    "description": "Latest updates, medical knowledge, and special offers from Nozomi.",
+    "categories": {
+      "all": "All Posts",
+      "news": "News and Events",
+      "health": "Health Guide",
+      "promo": "Promotions"
+    },
+    "read_more": "Read More",
+    "no_articles": "No articles yet in this category.",
+    "write_new": "Write New Post",
+    "edit": "Edit Article",
+    "delete": "Delete Article",
+    "delete_confirm": "Are you sure you want to delete this article?",
+    "share": "Share",
+    "back": "Back",
+    "posted_by": "Posted by",
+    "published_on": "Published on",
+    "labels": {
+      "title": "Article Title",
+      "category": "Category",
+      "image": "Image (URL)",
+      "youtube": "YouTube Video (URL - Optional)",
+      "content": "Article Content",
+      "placeholder_title": "Enter a catchy title...",
+      "placeholder_image": "https://example.com/image.jpg",
+      "placeholder_youtube": "https://www.youtube.com/watch?v=...",
+      "placeholder_content": "Share your useful content here..."
+    },
+    "actions": {
+      "save": "Save Article",
+      "publish": "Publish Article",
+      "update": "Update Article",
+      "saving": "Saving..."
+    }
   }
 }

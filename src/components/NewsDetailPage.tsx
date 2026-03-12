@@ -5,8 +5,10 @@ import { db } from '../firebase';
 import { motion } from 'framer-motion';
 import { Calendar, ArrowLeft, Edit, Trash2, Share2 } from 'lucide-react';
 import { useAuth } from '../lib/auth';
+import { useTranslation } from 'react-i18next';
 
 export const NewsDetailPage: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { isAdmin } = useAuth();
@@ -36,13 +38,13 @@ export const NewsDetailPage: React.FC = () => {
   }, [id, navigate]);
 
   const handleDelete = async () => {
-    if (!id || !window.confirm('Bạn có chắc chắn muốn xóa bài viết này?')) return;
+    if (!id || !window.confirm(t('news.delete_confirm'))) return;
     try {
       await deleteDoc(doc(db, 'news', id));
       navigate('/news');
     } catch (error) {
       console.error("Error deleting article:", error);
-      alert("Có lỗi xảy ra khi xóa bài viết.");
+      alert("Error deleting article.");
     }
   };
 
@@ -77,7 +79,7 @@ export const NewsDetailPage: React.FC = () => {
           className="inline-flex items-center gap-2 text-gray-500 hover:text-primary transition-colors mb-8 group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          Quay lại danh sách
+          {t('news.back')}
         </Link>
 
         <motion.div
@@ -104,6 +106,7 @@ export const NewsDetailPage: React.FC = () => {
                       <Calendar className="w-4 h-4" />
                       {formattedDate}
                     </span>
+                    <span className="text-xs text-gray-400">• {t('news.posted_by')}</span>
                   </div>
                 </div>
               </div>
@@ -114,19 +117,22 @@ export const NewsDetailPage: React.FC = () => {
                     <Link 
                       to={`/admin/news/edit/${article.id}`}
                       className="p-2 text-gray-400 hover:text-primary transition-colors border border-gray-100 rounded-lg"
+                      title={t('news.edit')}
                     >
                       <Edit className="w-5 h-5" />
                     </Link>
                     <button 
                       onClick={handleDelete}
                       className="p-2 text-gray-400 hover:text-red-500 transition-colors border border-gray-100 rounded-lg"
+                      title={t('news.delete')}
                     >
                       <Trash2 className="w-5 h-5" />
                     </button>
                   </>
                 )}
-                <button className="p-2 text-gray-400 hover:text-primary transition-colors border border-gray-100 rounded-lg">
+                <button className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-primary transition-colors border border-gray-100 rounded-lg">
                   <Share2 className="w-5 h-5" />
+                  <span className="text-sm font-medium">{t('news.share')}</span>
                 </button>
               </div>
             </div>
@@ -148,7 +154,7 @@ export const NewsDetailPage: React.FC = () => {
 
           {article.youtubeUrl && (
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Video liên quan</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('news.labels.youtube')}</h3>
               <div className="aspect-video rounded-3xl overflow-hidden shadow-xl">
                 <iframe
                   width="100%"

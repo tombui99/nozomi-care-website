@@ -5,6 +5,7 @@ import { NewsCard } from './NewsCard';
 import { Plus } from 'lucide-react';
 import { useAuth } from '../lib/auth';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const categories = [
   'All Posts',
@@ -14,10 +15,18 @@ const categories = [
 ];
 
 export const NewsPage: React.FC = () => {
+  const { t } = useTranslation();
   const { isAdmin } = useAuth();
   const [articles, setArticles] = useState<any[]>([]); // any[] for Firestore documents
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All Posts');
+
+  const categoryKeys: Record<string, string> = {
+    'All Posts': 'news.categories.all',
+    'Tin tức và Sự kiện': 'news.categories.news',
+    'Cẩm nang sức khoẻ': 'news.categories.health',
+    'Khuyến mãi': 'news.categories.promo'
+  };
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -53,10 +62,10 @@ export const NewsPage: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Tin tức & Sự kiện
+              {t('news.title')}
             </h1>
             <p className="text-gray-600 max-w-2xl">
-              Cập nhật những tin tức mới nhất, kiến thức y khoa và các chương trình ưu đãi từ Nozomi.
+              {t('news.description')}
             </p>
           </div>
           
@@ -66,7 +75,7 @@ export const NewsPage: React.FC = () => {
               className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors shadow-lg"
             >
               <Plus className="w-5 h-5" />
-              Viết bài mới
+              {t('news.write_new')}
             </Link>
           )}
         </div>
@@ -83,7 +92,7 @@ export const NewsPage: React.FC = () => {
                   : 'text-gray-500 hover:text-primary hover:bg-gray-50'
               }`}
             >
-              {category}
+              {t(categoryKeys[category])}
             </button>
           ))}
         </div>
@@ -100,7 +109,7 @@ export const NewsPage: React.FC = () => {
           </div>
         ) : (
           <div className="text-center py-20 bg-gray-50 rounded-3xl">
-            <p className="text-gray-500 text-lg">Chưa có bài viết nào trong danh mục này.</p>
+            <p className="text-gray-500 text-lg">{t('news.no_articles')}</p>
           </div>
         )}
       </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface NewsCardProps {
   id: string;
@@ -22,6 +23,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   imageUrl,
   category,
 }) => {
+  const { t } = useTranslation();
   const formattedDate = date?.toDate ? date.toDate().toLocaleDateString('vi-VN', {
     day: 'numeric',
     month: 'long',
@@ -68,7 +70,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           </p>
           
           <div className="flex items-center text-primary font-semibold gap-2">
-            Xem thêm <ArrowRight className="w-4 h-4" />
+            {t('news.read_more')} <ArrowRight className="w-4 h-4" />
           </div>
         </div>
       </Link>

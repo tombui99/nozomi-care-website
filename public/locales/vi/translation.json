@@ -156,7 +156,50 @@
   },
   "social": {
     "facebook": "Facebook",
-    "zalo": "Zalo",
+    "phone": "Hotline: 090 453 38 58",
     "google_maps": "Google Maps"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "admin_only": "Chỉ dành cho Quản trị viên",
+    "unauthorized": "Email này chưa được cấp quyền quản trị."
+  },
+  "news": {
+    "title": "Tin tức & Sự kiện",
+    "description": "Cập nhật những tin tức mới nhất, kiến thức y khoa và các chương trình ưu đãi từ Nozomi.",
+    "categories": {
+      "all": "Tất cả bài viết",
+      "news": "Tin tức và Sự kiện",
+      "health": "Cẩm nang sức khoẻ",
+      "promo": "Khuyến mãi"
+    },
+    "read_more": "Xem thêm",
+    "no_articles": "Chưa có bài viết nào trong danh mục này.",
+    "write_new": "Viết bài mới",
+    "edit": "Chỉnh sửa bài viết",
+    "delete": "Xóa bài viết",
+    "delete_confirm": "Bạn có chắc chắn muốn xóa bài viết này?",
+    "share": "Chia sẻ",
+    "back": "Quay lại",
+    "posted_by": "Đăng bởi",
+    "published_on": "Ngày đăng",
+    "labels": {
+      "title": "Tiêu đề bài viết",
+      "category": "Danh mục",
+      "image": "Hình ảnh (URL)",
+      "youtube": "YouTube Video (URL - Tùy chọn)",
+      "content": "Nội dung bài viết",
+      "placeholder_title": "Nhập tiêu đề hấp dẫn...",
+      "placeholder_image": "https://example.com/image.jpg",
+      "placeholder_youtube": "https://www.youtube.com/watch?v=...",
+      "placeholder_content": "Chia sẻ nội dung bổ ích của bạn tại đây..."
+    },
+    "actions": {
+      "save": "Lưu bài viết",
+      "publish": "Đăng bài viết",
+      "update": "Cập nhật bài viết",
+      "saving": "Đang lưu..."
+    }
   }
 }

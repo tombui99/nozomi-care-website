@@ -156,7 +156,50 @@
   },
   "social": {
     "facebook": "Facebook",
-    "zalo": "Zalo",
+    "phone": "ホットライン: 090 453 38 58",
     "google_maps": "Google マップ"
+  },
+  "auth": {
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "admin_only": "管理者のみ",
+    "unauthorized": "このメールアドレスは管理者として承認されていません。"
+  },
+  "news": {
+    "title": "ニュース＆イベント",
+    "description": "のぞみからの最新ニュース、医療知識、特別オファーのアップデート。",
+    "categories": {
+      "all": "すべての投稿",
+      "news": "ニュースとイベント",
+      "health": "ヘルスガイド",
+      "promo": "プロモーション"
+    },
+    "read_more": "もっと見る",
+    "no_articles": "このカテゴリにはまだ記事がありません。",
+    "write_new": "新規投稿",
+    "edit": "記事を編集",
+    "delete": "記事を削除",
+    "delete_confirm": "この記事を削除してもよろしいですか？",
+    "share": "共有",
+    "back": "戻る",
+    "posted_by": "投稿者",
+    "published_on": "投稿日",
+    "labels": {
+      "title": "記事のタイトル",
+      "category": "カテゴリ",
+      "image": "画像 (URL)",
+      "youtube": "YouTube動画 (URL - オプション)",
+      "content": "記事の内容",
+      "placeholder_title": "キャッチーなタイトルを入力...",
+      "placeholder_image": "https://example.com/image.jpg",
+      "placeholder_youtube": "https://www.youtube.com/watch?v=...",
+      "placeholder_content": "ここに役立つコンテンツを共有してください..."
+    },
+    "actions": {
+      "save": "記事を保存",
+      "publish": "記事を投稿",
+      "update": "記事を更新",
+      "saving": "保存中..."
+    }
   }
 }

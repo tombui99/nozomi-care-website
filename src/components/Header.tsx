@@ -34,7 +34,7 @@ export const Header = () => {
     { label: t("navigation.home"), href: "/" },
     { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.services"), href: "/services" },
-    { label: "Tin tức", href: "/news" },
+    { label: t("navigation.news"), href: "/news" },
   ];
 
   const currentLanguage =
@@ -104,7 +104,7 @@ export const Header = () => {
                       className="w-full px-4 py-2 text-left text-sm hover:bg-gray-50 flex items-center gap-2 text-red-600"
                     >
                       <LogOut size={16} />
-                      Đăng xuất
+                      {t("auth.logout")}
                     </button>
                   </div>
                 )}
@@ -115,7 +115,7 @@ export const Header = () => {
                 className="flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-primary transition-colors"
               >
                 <LogIn size={18} />
-                Đăng nhập
+                {t("auth.login")}
               </button>
             )}
           </div>
@@ -252,7 +252,7 @@ export const Header = () => {
                   className="flex items-center gap-2 text-red-600 font-semibold"
                 >
                   <LogOut size={18} />
-                  Đăng xuất
+                  {t("auth.logout")}
                 </button>
               </div>
             ) : (
@@ -261,7 +261,7 @@ export const Header = () => {
                 className="flex items-center gap-2 font-semibold text-brand-dark"
               >
                 <LogIn size={18} />
-                Đăng nhập
+                {t("auth.login")}
               </button>
             )}
           </div>

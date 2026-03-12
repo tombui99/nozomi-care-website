@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Facebook, MapPin } from "lucide-react";
+import { Facebook, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const socialLinks = [
@@ -12,12 +12,11 @@ const socialLinks = [
     translationKey: "social.facebook",
   },
   {
-    name: "Zalo",
-    type: "image",
-    src: "/zalo.svg",
-    href: "https://zalo.me",
-    color: "bg-white",
-    translationKey: "social.zalo",
+    name: "Phone",
+    icon: Phone,
+    href: "tel:0904533858",
+    color: "bg-green-500",
+    translationKey: "social.phone",
   },
   {
     name: "Google Maps",
@@ -47,15 +46,9 @@ export const SocialSidebar: React.FC = () => {
           className={`${social.color} p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center group relative w-12 h-12 overflow-hidden`}
           title={t(social.translationKey)}
         >
-          {social.type === "image" ? (
-            <img
-              src={social.src}
-              alt={social.name}
-              className="w-full h-full object-contain p-1"
-            />
-          ) : social.icon ? (
+          {social.icon && (
             <social.icon size={24} className="text-white" strokeWidth={2} />
-          ) : null}
+          )}
           <span className="absolute right-full mr-3 px-2 py-1 rounded bg-gray-800 text-white text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
             {t(social.translationKey)}
           </span>

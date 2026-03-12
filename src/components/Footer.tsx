@@ -14,9 +14,9 @@ export const Footer = () => {
   return (
     <footer className="bg-brand-dark text-white pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {/* Brand Info */}
-          <div className="flex flex-col gap-6 lg:col-span-1">
+          <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <div className="bg-white p-2 rounded-xl inline-block">
                 <img
@@ -93,25 +93,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-lg font-bold">
-              {t("footer.newsletter_title")}
-            </h4>
-            <p className="text-white/60 font-medium">
-              {t("footer.newsletter_desc")}
-            </p>
-            <div className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder={t("footer.newsletter_placeholder")}
-                className="w-full px-5 py-3 rounded-2xl bg-white/5 border border-white/10 focus:outline-none focus:border-primary transition-colors text-white"
-              />
-              <button className="w-full py-3 bg-primary text-white font-bold rounded-2xl hover:bg-primary/90 transition-all">
-                {t("footer.newsletter_button")}
-              </button>
-            </div>
-          </div>
         </div>
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">

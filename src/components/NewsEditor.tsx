@@ -5,6 +5,7 @@ import { db } from '../firebase';
 import { useAuth } from '../lib/auth';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Image as ImageIcon, Youtube, Send } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const categories = [
   'Tin tức và Sự kiện',
@@ -13,6 +14,7 @@ const categories = [
 ];
 
 export const NewsEditor: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { user, isAdmin, loading: authLoading } = useAuth();
@@ -87,7 +89,7 @@ export const NewsEditor: React.FC = () => {
       navigate('/news');
     } catch (error) {
       console.error("Error saving article:", error);
-      alert("Có lỗi xảy ra khi lưu bài viết.");
+      alert(t('news.actions.error_saving') || "Error saving article.");
     } finally {
       setSaving(false);
     }
@@ -109,7 +111,7 @@ export const NewsEditor: React.FC = () => {
           className="inline-flex items-center gap-2 text-gray-500 hover:text-primary transition-colors mb-8 group"
         >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-          Quay lại
+          {t('news.back')}
         </button>
 
         <motion.div
@@ -119,25 +121,25 @@ export const NewsEditor: React.FC = () => {
         >
           <div className="p-8 md:p-12">
             <h1 className="text-3xl font-bold text-gray-900 mb-8">
-              {id ? 'Chỉnh sửa bài viết' : 'Viết bài mới'}
+              {id ? t('news.edit') : t('news.write_new')}
             </h1>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Tiêu đề bài viết</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.title')}</label>
                 <input
                   type="text"
                   required
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                  placeholder="Nhập tiêu đề hấp dẫn..."
+                  placeholder={t('news.labels.placeholder_title')}
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Danh mục</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.category')}</label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
@@ -149,7 +151,7 @@ export const NewsEditor: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Hình ảnh (URL)</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.image')}</label>
                   <div className="relative">
                     <input
                       type="url"
@@ -157,7 +159,7 @@ export const NewsEditor: React.FC = () => {
                       value={formData.imageUrl}
                       onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
                       className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                      placeholder="https://example.com/image.jpg"
+                      placeholder={t('news.labels.placeholder_image')}
                     />
                     <ImageIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                   </div>
@@ -165,28 +167,28 @@ export const NewsEditor: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">YouTube Video (URL - Tùy chọn)</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.youtube')}</label>
                 <div className="relative">
                   <input
                     type="url"
                     value={formData.youtubeUrl}
                     onChange={(e) => setFormData({ ...formData, youtubeUrl: e.target.value })}
                     className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                    placeholder="https://www.youtube.com/watch?v=..."
+                    placeholder={t('news.labels.placeholder_youtube')}
                   />
                   <Youtube className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Nội dung bài viết</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.content')}</label>
                 <textarea
                   required
                   rows={12}
                   value={formData.content}
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
-                  placeholder="Chia sẻ nội dung bổ ích của bạn tại đây..."
+                  placeholder={t('news.labels.placeholder_content')}
                 ></textarea>
               </div>
 
@@ -201,7 +203,7 @@ export const NewsEditor: React.FC = () => {
                   ) : (
                     <Send className="w-5 h-5" />
                   )}
-                  {id ? 'Cập nhật bài viết' : 'Đăng bài viết'}
+                  {saving ? t('news.actions.saving') : (id ? t('news.actions.update') : t('news.actions.publish'))}
                 </button>
               </div>
             </form>
