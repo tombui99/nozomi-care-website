@@ -1,31 +1,31 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Facebook, MapPin } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { motion } from "framer-motion";
+import { Facebook, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const socialLinks = [
   {
-    name: 'Facebook',
+    name: "Facebook",
     icon: Facebook,
-    href: 'https://facebook.com',
-    color: 'bg-[#1877F2]',
-    translationKey: 'social.facebook'
+    href: "https://facebook.com/nozomicare",
+    color: "bg-[#1877F2]",
+    translationKey: "social.facebook",
   },
   {
-    name: 'Zalo',
-    type: 'image',
-    src: '/zalo.svg',
-    href: 'https://zalo.me',
-    color: 'bg-white',
-    translationKey: 'social.zalo'
+    name: "Zalo",
+    type: "image",
+    src: "/zalo.svg",
+    href: "https://zalo.me",
+    color: "bg-white",
+    translationKey: "social.zalo",
   },
   {
-    name: 'Google Maps',
+    name: "Google Maps",
     icon: MapPin,
-    href: 'https://maps.google.com',
-    color: 'bg-[#EA4335]',
-    translationKey: 'social.google_maps'
-  }
+    href: "https://maps.app.goo.gl/BwjurBsda5LzNXSZ8",
+    color: "bg-[#EA4335]",
+    translationKey: "social.google_maps",
+  },
 ];
 
 export const SocialSidebar: React.FC = () => {
@@ -47,10 +47,10 @@ export const SocialSidebar: React.FC = () => {
           className={`${social.color} p-2 rounded-full shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center group relative w-12 h-12 overflow-hidden`}
           title={t(social.translationKey)}
         >
-          {social.type === 'image' ? (
-            <img 
-              src={social.src} 
-              alt={social.name} 
+          {social.type === "image" ? (
+            <img
+              src={social.src}
+              alt={social.name}
               className="w-full h-full object-contain p-1"
             />
           ) : social.icon ? (

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import { useRef } from "react";
+import { ContactButton } from "./ContactButton";
 
 export const AboutNozomi = () => {
   const { t } = useTranslation();
@@ -161,8 +162,8 @@ export const AboutNozomi = () => {
       </section>
 
       {/* Final CTA or Quote Section */}
-      <section className="py-40 bg-brand-dark text-white text-center">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-40 bg-brand-dark text-white text-center relative">
+        <div className="max-w-4xl mx-auto px-6 relative">
            <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -171,9 +172,7 @@ export const AboutNozomi = () => {
             <h2 className="text-4xl md:text-5xl font-extrabold mb-12 leading-tight">
                {t("hero.floating_label")}
             </h2>
-            <button className="px-12 py-5 bg-primary text-white text-lg font-bold rounded-full hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-primary/40">
-              {t("common.contact_cta")}
-            </button>
+            <ContactButton variant="footer" />
            </motion.div>
         </div>
       </section>

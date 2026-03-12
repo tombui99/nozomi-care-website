@@ -1,14 +1,14 @@
-import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
   const { t } = useTranslation();
 
   const navItems = [
-    { label: t("navigation.about"), href: "about" },
-    { label: t("navigation.services"), href: "#services" },
-    { label: t("navigation.news"), href: "#news" },
-    { label: t("navigation.contact"), href: "#contact" },
+    { label: t("navigation.home"), href: "/" },
+    { label: t("navigation.about"), href: "/about" },
+    { label: t("navigation.services"), href: "/services" },
+    { label: t("navigation.news"), href: "/#news" },
   ];
 
   return (
@@ -30,18 +30,26 @@ export const Footer = () => {
               {t("brand.description")}
             </p>
             <div className="flex gap-4">
-              {[Github, Twitter, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
-                >
-                  <Icon
-                    size={18}
-                    className="text-white/60 group-hover:text-white"
-                  />
-                </a>
-              ))}
+              <a
+                href="https://facebook.com/nozomicare"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#1877F2] hover:border-[#1877F2] transition-all group"
+              >
+                <Facebook
+                  size={18}
+                  className="text-white/60 group-hover:text-white"
+                />
+              </a>
+              <a
+                href="tel:0904533858"
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-green hover:border-brand-green transition-all group"
+              >
+                <Phone
+                  size={18}
+                  className="text-white/60 group-hover:text-white"
+                />
+              </a>
             </div>
           </div>
 
@@ -68,14 +76,13 @@ export const Footer = () => {
               <div className="flex gap-4">
                 <MapPin className="text-primary shrink-0" size={20} />
                 <span className="text-white/60 font-medium">
-                  {t("footer.contact.address")}
+                  Số TT02-1 và TT02-2, KĐT mới Phú Lương, Phường Kiến Hưng, TP.
+                  Hà Nội.
                 </span>
               </div>
               <div className="flex gap-4">
                 <Phone className="text-primary shrink-0" size={20} />
-                <span className="text-white/60 font-medium">
-                  {t("footer.contact.phone")}
-                </span>
+                <span className="text-white/60 font-medium">090 453 38 58</span>
               </div>
               <div className="flex gap-4">
                 <Mail className="text-primary shrink-0" size={20} />

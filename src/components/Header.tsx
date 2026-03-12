@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
+import { ContactButton } from "./ContactButton";
 
 const languages = [
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
@@ -27,10 +28,10 @@ export const Header = () => {
   }, []);
 
   const navItems = [
+    { label: t("navigation.home"), href: "/" },
     { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.services"), href: "/services" },
     { label: t("navigation.news"), href: "/#news" },
-    { label: t("navigation.contact"), href: "/#contact" },
   ];
 
   const currentLanguage =
@@ -114,10 +115,7 @@ export const Header = () => {
               </div>
             )}
           </div>
-
-          <button className="px-6 py-2.5 bg-primary text-white text-sm font-bold rounded-full hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
-            {t("common.contact_cta")}
-          </button>
+          <ContactButton variant="header" />
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -190,16 +188,19 @@ export const Header = () => {
               to={item.href}
               className={cn(
                 "text-lg font-medium",
-                location.pathname === item.href ? "text-primary" : "text-brand-dark",
+                location.pathname === item.href
+                  ? "text-primary"
+                  : "text-brand-dark",
               )}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>
           ))}
-          <button className="w-full py-4 bg-primary text-white font-bold rounded-2xl">
-            {t("common.contact_cta")}
-          </button>
+          <ContactButton
+            variant="header"
+            className="w-full py-4 justify-center"
+          />
         </motion.div>
       )}
     </header>

@@ -9,6 +9,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { cn } from "../lib/utils";
+import { ContactButton } from "./ContactButton";
 
 const ServicesPage: React.FC = () => {
   const { t } = useTranslation();
@@ -155,7 +156,7 @@ const ServicesPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-brand-dark rounded-[48px] p-12 md:p-20 text-center relative overflow-hidden"
+            className="bg-brand-dark rounded-[48px] p-12 md:p-20 text-center relative"
           >
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
@@ -164,9 +165,7 @@ const ServicesPage: React.FC = () => {
               <p className="text-xl text-white/70 font-medium mb-12 max-w-2xl mx-auto">
                 {t("footer.newsletter_desc")}
               </p>
-              <button className="px-10 py-5 bg-primary text-white text-lg font-bold rounded-full hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(255,142,170,0.3)]">
-                {t("common.contact_cta")}
-              </button>
+              <ContactButton variant="footer" />
             </div>
 
             {/* Background Accents */}
