@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Heart, UserCheck, GraduationCap, Sparkles } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
@@ -12,6 +13,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const Services: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -104,11 +106,12 @@ export const Services: React.FC = () => {
                 }}
                 whileHover={{ y: -8 }}
                 className={cn(
-                  "p-10 rounded-4xl bg-white border shadow-xl transition-all group",
+                  "p-10 rounded-4xl bg-white border shadow-xl transition-all group cursor-pointer",
                   theme.border,
                   theme.shadow,
                   theme.hoverShadow,
                 )}
+                onClick={() => navigate("/services")}
               >
                 <div
                   className={cn(
@@ -140,12 +143,22 @@ export const Services: React.FC = () => {
               <span className="px-5 py-2 rounded-full bg-white/10 text-secondary self-start font-bold text-sm tracking-wider uppercase">
                 {t("services.philosophy.badge")}
               </span>
-              <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-                {t("services.philosophy.title").split(" ")[0]}{" "}
+              <motion.h2
+                whileHover={{
+                  scale: 1.05,
+                  textShadow: "0 0 20px rgba(255,255,255,0.3)",
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="text-5xl md:text-7xl font-bold leading-tight cursor-default"
+              >
+                {t("services.philosophy.title")
+                  .split(" ")
+                  .slice(0, -1)
+                  .join(" ")}{" "}
                 <span className="text-primary">
-                  {t("services.philosophy.title").split(" ")[1]}
+                  {t("services.philosophy.title").split(" ").slice(-1)}
                 </span>
-              </h2>
+              </motion.h2>
               <p className="text-2xl text-white/80 font-medium max-w-md">
                 {t("services.philosophy.description")}
               </p>

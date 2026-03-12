@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Check } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
 
 export const Solutions: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const solutionItems = [
     {
@@ -59,7 +61,8 @@ export const Solutions: React.FC = () => {
                 duration: 0.8,
                 ease: "easeOut",
               }}
-              className="flex flex-col group h-full"
+              className="flex flex-col group h-full cursor-pointer"
+              onClick={() => navigate("/services")}
             >
               {/* Image Section */}
               <div className="relative h-100 overflow-hidden">

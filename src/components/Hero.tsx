@@ -1,10 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Phone, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <section className="relative px-6 py-12 md:py-24 overflow-hidden">
@@ -88,12 +90,18 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-6">
-            <button className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1">
+            <button
+              onClick={() => navigate("/about")}
+              className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-1"
+            >
               {t("hero.cta")}
               <ArrowRight size={20} />
             </button>
-            <div className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm">
-              <div className="p-3 bg-brand-yellow/20 rounded-xl">
+            <a
+              href="tel:0904533858"
+              className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 group"
+            >
+              <div className="p-3 bg-brand-yellow/20 rounded-xl group-hover:bg-brand-yellow/30 transition-colors">
                 <Phone
                   className="text-brand-yellow-dark animate-[ring_1s_ease-in-out_infinite]"
                   style={{ color: "#B49300" }}
@@ -105,10 +113,10 @@ export const Hero: React.FC = () => {
                   {t("common.contact_cta")}
                 </span>
                 <span className="text-sm font-bold text-brand-dark">
-                  {t("hero.qr_label")}
+                  090 453 38 58
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </motion.div>
 
