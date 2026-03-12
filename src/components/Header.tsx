@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogIn, LogOut, User as UserIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { ContactButton } from "./ContactButton";
+import { useAuth } from "../lib/auth";
 
 const languages = [
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
@@ -16,8 +17,10 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const { user, login, logout, loading } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +34,7 @@ export const Header = () => {
     { label: t("navigation.home"), href: "/" },
     { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.services"), href: "/services" },
-    { label: t("navigation.news"), href: "/#news" },
+    { label: "Tin tức", href: "/news" },
   ];
 
   const currentLanguage =
@@ -77,6 +80,45 @@ export const Header = () => {
               {item.label}
             </Link>
           ))}
+
+          {/* User Auth */}
+          <div className="relative">
+            {loading ? (
+              <div className="w-8 h-8 rounded-full bg-gray-100 animate-pulse" />
+            ) : user ? (
+              <div className="relative">
+                <button 
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                  className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary hover:scale-105 transition-transform"
+                >
+                  <img src={user.photoURL || ''} alt={user.displayName || ''} className="w-full h-full object-cover" />
+                </button>
+                {isUserMenuOpen && (
+                  <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl py-2 z-50 overflow-hidden">
+                    <div className="px-4 py-2 border-b border-gray-50 flex items-center gap-2">
+                       <UserIcon size={16} className="text-gray-400" />
+                       <span className="text-xs font-semibold text-gray-700 truncate">{user.displayName}</span>
+                    </div>
+                    <button
+                      onClick={() => { logout(); setIsUserMenuOpen(false); }}
+                      className="w-full px-4 py-2 text-left text-sm hover:bg-gray-50 flex items-center gap-2 text-red-600"
+                    >
+                      <LogOut size={16} />
+                      Đăng xuất
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button 
+                onClick={login}
+                className="flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-primary transition-colors"
+              >
+                <LogIn size={18} />
+                Đăng nhập
+              </button>
+            )}
+          </div>
 
           {/* Language Selector */}
           <div className="relative">
@@ -197,6 +239,33 @@ export const Header = () => {
               {item.label}
             </Link>
           ))}
+
+          <div className="pt-4 border-t border-gray-100">
+            {user ? (
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <img src={user.photoURL || ''} alt={user.displayName || ''} className="w-10 h-10 rounded-full" />
+                  <span className="font-bold text-brand-dark">{user.displayName}</span>
+                </div>
+                <button
+                  onClick={() => { logout(); setIsMobileMenuOpen(false); }}
+                  className="flex items-center gap-2 text-red-600 font-semibold"
+                >
+                  <LogOut size={18} />
+                  Đăng xuất
+                </button>
+              </div>
+            ) : (
+              <button 
+                onClick={() => { login(); setIsMobileMenuOpen(false); }}
+                className="flex items-center gap-2 font-semibold text-brand-dark"
+              >
+                <LogIn size={18} />
+                Đăng nhập
+              </button>
+            )}
+          </div>
+
           <ContactButton
             variant="header"
             className="w-full py-4 justify-center"
