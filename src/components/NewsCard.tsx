@@ -66,7 +66,16 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           </h3>
           
           <p className="text-gray-600 mb-4 line-clamp-3">
-            {excerpt}
+            {excerpt
+              .replace(/<[^>]*>/g, ' ') // Replace tags with space to avoid merging
+              .replace(/&nbsp;/g, ' ')
+              .replace(/&amp;/g, '&')
+              .replace(/&lt;/g, '<')
+              .replace(/&gt;/g, '>')
+              .replace(/&quot;/g, '"')
+              .replace(/&#39;/g, "'")
+              .replace(/\s+/g, ' ') // Collapse multiple spaces
+              .trim()}
           </p>
           
           <div className="flex items-center text-primary font-semibold gap-2">

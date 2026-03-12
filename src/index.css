@@ -70,3 +70,45 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 142, 170, 0.5);
 }
+
+/* Global Quill Overrides */
+.ql-container.ql-snow {
+  font-family: var(--font-sans) !important;
+  font-size: 1.125rem !important; /* Slightly larger for reading */
+  border: none !important;
+}
+
+.ql-editor {
+  line-height: 1.8 !important;
+  color: #374151 !important;
+}
+
+/* Reader specific tweaks - remove default editor padding if needed */
+.article-reader .ql-editor {
+  padding: 0 !important;
+}
+
+.ql-editor h1, .ql-editor h2, .ql-editor h3 {
+  color: #111827 !important;
+  font-weight: 700 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.ql-editor a {
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+}
+
+/* Editor specific tweaks */
+.quill-editor-container .ql-toolbar {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-color: #e5e7eb;
+}
+
+.quill-editor-container .ql-container {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  min-height: 400px;
+}

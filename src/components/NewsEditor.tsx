@@ -6,6 +6,8 @@ import { useAuth } from '../lib/auth';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Image as ImageIcon, Youtube, Send } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 
 const categories = [
   'Tin tức và Sự kiện',
@@ -68,7 +70,19 @@ export const NewsEditor: React.FC = () => {
     
     setSaving(true);
     try {
-      const excerpt = formData.content.substring(0, 150) + (formData.content.length > 150 ? '...' : '');
+      // Create a temporary element to extract plain text and decode entities
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = formData.content;
+      
+      // Replace block tags with space to avoid merging words
+      const blocks = tempDiv.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, blockquote');
+      blocks.forEach(block => {
+        block.insertAdjacentText('afterend', ' ');
+      });
+
+      const plainText = (tempDiv.textContent || tempDiv.innerText || "").replace(/\u00a0/g, ' ').trim();
+      const excerpt = plainText.substring(0, 150) + (plainText.length > 150 ? '...' : '');
+      
       const articleData = {
         ...formData,
         excerpt,
@@ -180,16 +194,23 @@ export const NewsEditor: React.FC = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="quill-editor-container">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">{t('news.labels.content')}</label>
-                <textarea
-                  required
-                  rows={12}
+                <ReactQuill
+                  theme="snow"
                   value={formData.content}
-                  onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
+                  onChange={(content) => setFormData({ ...formData, content })}
                   placeholder={t('news.labels.placeholder_content')}
-                ></textarea>
+                  modules={{
+                    toolbar: [
+                      [{ 'header': [1, 2, 3, false] }],
+                      ['bold', 'italic', 'underline', 'strike'],
+                      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                      ['link', 'blockquote', 'code-block'],
+                      ['clean']
+                    ],
+                  }}
+                />
               </div>
 
               <div className="pt-6 flex justify-end">

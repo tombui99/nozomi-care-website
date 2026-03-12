@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, Edit, Trash2, Share2, Facebook, Twitter, Link as LinkIcon, Check } from "lucide-react";
 import { useAuth } from "../lib/auth";
 import { useTranslation } from "react-i18next";
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 
 interface NewsArticle {
   id: string;
@@ -266,39 +268,41 @@ export const NewsDetailPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative aspect-video rounded-3xl overflow-hidden mb-12 shadow-2xl">
-            <img
-              src={article.imageUrl}
-              alt={article.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-12">
-            {article.content
-              ?.split("\n")
-              .map((paragraph: string, index: number) => (
-                <p key={index} className="mb-6">
-                  {paragraph}
-                </p>
-              ))}
-          </div>
-
-          {article.youtubeUrl && (
-            <div className="mb-12">
-              <div className="aspect-video rounded-3xl overflow-hidden shadow-xl">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={getYouTubeEmbedUrl(article.youtubeUrl) || ""}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+          <div className="bg-white rounded-bento shadow-2xl overflow-hidden mb-12">
+            <div className="aspect-video w-full overflow-hidden">
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-          )}
+            
+            <div className="p-6 md:p-12">
+              <ReactQuill
+                value={article.content}
+                readOnly={true}
+                theme="snow"
+                modules={{ toolbar: false }}
+                className="article-reader"
+              />
+
+              {article.youtubeUrl && (
+                <div className="mt-12">
+                  <div className="aspect-video rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={getYouTubeEmbedUrl(article.youtubeUrl) || ""}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
