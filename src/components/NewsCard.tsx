@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, User, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -8,8 +8,6 @@ interface NewsCardProps {
   id: string;
   title: string;
   excerpt: string;
-  author: string;
-  date: any;
   imageUrl: string;
   category: string;
 }
@@ -18,19 +16,10 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   id,
   title,
   excerpt,
-  author,
-  date,
   imageUrl,
   category,
 }) => {
   const { t } = useTranslation();
-  const formattedDate = date?.toDate
-    ? date.toDate().toLocaleDateString("vi-VN", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      })
-    : date;
 
   return (
     <motion.div
