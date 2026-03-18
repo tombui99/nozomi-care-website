@@ -3,11 +3,21 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { doc, getDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { motion } from "framer-motion";
-import { Calendar, ArrowLeft, Edit, Trash2, Share2, Facebook, Twitter, Link as LinkIcon, Check } from "lucide-react";
+import {
+  Calendar,
+  ArrowLeft,
+  Edit,
+  Trash2,
+  Share2,
+  Facebook,
+  Twitter,
+  Link as LinkIcon,
+  Check,
+} from "lucide-react";
 import { useAuth } from "../lib/auth";
 import { useTranslation } from "react-i18next";
-import ReactQuill from 'react-quill-new';
-import 'react-quill-new/dist/quill.snow.css';
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 
 interface NewsArticle {
   id: string;
@@ -105,7 +115,7 @@ export const NewsDetailPage: React.FC = () => {
   const shareToFacebook = () => {
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`,
-      "_blank"
+      "_blank",
     );
     setIsShareOpen(false);
   };
@@ -114,7 +124,7 @@ export const NewsDetailPage: React.FC = () => {
     if (!article) return;
     window.open(
       `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}`,
-      "_blank"
+      "_blank",
     );
     setIsShareOpen(false);
   };
@@ -167,30 +177,11 @@ export const NewsDetailPage: React.FC = () => {
 
             <div className="flex flex-wrap items-center justify-between gap-6 border-b border-gray-100 pb-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-primary font-bold overflow-hidden">
-                  {article.authorPhoto ? (
-                    <img
-                      src={article.authorPhoto}
-                      alt={article.author}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    article.author?.charAt(0)
-                  )}
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">
-                    {article.author}
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-500">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {formattedDate}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      • {t("news.posted_by")}
-                    </span>
-                  </div>
+                <div className="flex items-center gap-3 text-sm text-gray-500">
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {formattedDate}
+                  </span>
                 </div>
               </div>
 
@@ -214,12 +205,14 @@ export const NewsDetailPage: React.FC = () => {
                   </>
                 )}
                 <div className="relative">
-                  <button 
+                  <button
                     onClick={handleShare}
                     className="flex items-center gap-2 px-4 py-2 text-gray-400 hover:text-primary transition-colors border border-gray-100 rounded-lg bg-white"
                   >
                     <Share2 className="w-5 h-5" />
-                    <span className="text-sm font-medium">{t("news.share")}</span>
+                    <span className="text-sm font-medium">
+                      {t("news.share")}
+                    </span>
                   </button>
 
                   {isShareOpen && (
@@ -239,8 +232,8 @@ export const NewsDetailPage: React.FC = () => {
                         onClick={shareToTwitter}
                         className="w-full px-4 py-3 text-left text-sm hover:bg-gray-50 flex items-center gap-3 transition-colors text-gray-700"
                       >
-                        <Twitter size={18} className="text-[#1DA1F2]" />
-                        X (Twitter)
+                        <Twitter size={18} className="text-[#1DA1F2]" />X
+                        (Twitter)
                       </button>
                       <button
                         onClick={copyToClipboard}
@@ -251,15 +244,17 @@ export const NewsDetailPage: React.FC = () => {
                         ) : (
                           <LinkIcon size={18} className="text-gray-400" />
                         )}
-                        {copied ? t("news.actions.copied") || "Copied!" : t("news.actions.copy_link") || "Copy Link"}
+                        {copied
+                          ? t("news.actions.copied") || "Copied!"
+                          : t("news.actions.copy_link") || "Copy Link"}
                       </button>
                     </motion.div>
                   )}
-                  
+
                   {/* Backdrop for closing share menu */}
                   {isShareOpen && (
-                    <div 
-                      className="fixed inset-0 z-40" 
+                    <div
+                      className="fixed inset-0 z-40"
                       onClick={() => setIsShareOpen(false)}
                     />
                   )}
@@ -276,7 +271,7 @@ export const NewsDetailPage: React.FC = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            
+
             <div className="p-6 md:p-12">
               <ReactQuill
                 value={article.content}

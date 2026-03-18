@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { motion } from "framer-motion";
+import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface NewsCardProps {
   id: string;
@@ -24,11 +24,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({
   category,
 }) => {
   const { t } = useTranslation();
-  const formattedDate = date?.toDate ? date.toDate().toLocaleDateString('vi-VN', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  }) : date;
+  const formattedDate = date?.toDate
+    ? date.toDate().toLocaleDateString("vi-VN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+    : date;
 
   return (
     <motion.div
@@ -40,7 +42,10 @@ export const NewsCard: React.FC<NewsCardProps> = ({
       <Link to={`/news/${id}`} className="block">
         <div className="relative h-64 overflow-hidden">
           <img
-            src={imageUrl || 'https://images.unsplash.com/photo-1516549291061-2628da6e8a4a?auto=format&fit=crop&q=80'}
+            src={
+              imageUrl ||
+              "https://images.unsplash.com/photo-1516549291061-2628da6e8a4a?auto=format&fit=crop&q=80"
+            }
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
@@ -48,38 +53,27 @@ export const NewsCard: React.FC<NewsCardProps> = ({
             {category}
           </div>
         </div>
-        
+
         <div className="p-6">
-          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-            <div className="flex items-center gap-1">
-              <User className="w-4 h-4" />
-              <span>{author}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              <span>{formattedDate}</span>
-            </div>
-          </div>
-          
           <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
             {title}
           </h3>
-          
+
           <p className="text-gray-600 mb-4 line-clamp-3">
             {excerpt
-              .replace(/<[^>]*>/g, ' ') // Replace tags with space to avoid merging
-              .replace(/&nbsp;/g, ' ')
-              .replace(/&amp;/g, '&')
-              .replace(/&lt;/g, '<')
-              .replace(/&gt;/g, '>')
+              .replace(/<[^>]*>/g, " ") // Replace tags with space to avoid merging
+              .replace(/&nbsp;/g, " ")
+              .replace(/&amp;/g, "&")
+              .replace(/&lt;/g, "<")
+              .replace(/&gt;/g, ">")
               .replace(/&quot;/g, '"')
               .replace(/&#39;/g, "'")
-              .replace(/\s+/g, ' ') // Collapse multiple spaces
+              .replace(/\s+/g, " ") // Collapse multiple spaces
               .trim()}
           </p>
-          
+
           <div className="flex items-center text-primary font-semibold gap-2">
-            {t('news.read_more')} <ArrowRight className="w-4 h-4" />
+            {t("news.read_more")} <ArrowRight className="w-4 h-4" />
           </div>
         </div>
       </Link>
