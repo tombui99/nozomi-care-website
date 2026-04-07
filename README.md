@@ -1,73 +1,122 @@
-# React + TypeScript + Vite
+# 🌿 Nozomi Care Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official repository for the **Nozomi Care** website. This is a modern, high-performance web application designed for professional healthcare services, built with a focus on user experience, internationalization, and smooth animations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Quick Start
 
-## React Compiler
+Get up and running in less than 2 minutes!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Prerequisites
 
-## Expanding the ESLint configuration
+Ensure you have the following installed:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/) (Version 20.x or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js) or [pnpm](https://pnpm.io/) / [yarn](https://yarnpkg.com/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Clone the repository and install dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/tombui99/nozomi-care-website.git
+cd nozomi-care-website
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 3. Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the local development server with Hot Module Replacement (HMR):
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to see the result! ⚡️
+
+---
+
+## 🛠 Tech Stack
+
+This project leverages the latest technologies for a premium web experience:
+
+- **Frontend Core:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite 7](https://vitejs.dev/) (Lightning fast builds)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) (Utility-first CSS)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) (Silky smooth transitions)
+- **Icons:** [Lucide React](https://lucide.dev/) (Clean, consistent iconography)
+- **Routing:** [React Router 7](https://reactrouter.com/)
+- **Internationalization:** [i18next](https://www.i18next.com/) (Supports 🇻🇳 Vietnamese, 🇺🇸 English, 🇯🇵 Japanese)
+- **Backend & Hosting:** [Firebase](https://firebase.google.com/)
+
+---
+
+## ✨ Key Features
+
+- **📱 Fully Responsive:** Optimized for Mobile, Tablet, and Desktop.
+- **🌐 Multi-language Support:** Seamless switching between Vietnamese, English, and Japanese.
+- **✨ Premium UI/UX:** Built with modern design principles, featuring glassmorphism and subtle micro-animations.
+- **📰 News Management:** Integrated system for managing and displaying healthcare news.
+- **🔥 Firebase Integration:** Ready for production deployment with Firebase Hosting.
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/         # Images, fonts, and static assets
+├── components/     # Reusable React components (Header, Footer, Hero, etc.)
+├── lib/            # Utility functions and shared logic
+├── firebase.ts     # Firebase configuration and initialization
+├── i18n.ts         # Internationalization setup (VN, EN, JP)
+├── App.tsx         # Main application entry and routing
+└── main.tsx        # React DOM mounting
+```
+
+---
+
+## ☁️ Deployment
+
+The project is configured for **Firebase Hosting**.
+
+1. **Build the project:**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Login to Firebase (if not already):**
+
+   ```bash
+   npx firebase-tools login
+   ```
+
+3. **Deploy to production:**
+
+   ```bash
+   npx firebase-tools deploy
+   ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+Built with ❤️ by the Nozomi Care Team.
