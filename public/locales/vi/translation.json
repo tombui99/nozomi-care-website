@@ -13,7 +13,7 @@
   },
   "hero": {
     "badge": "40 năm kinh nghiệm từ Nhật Bản",
-    "title": "Chăm sóc bằng Tình yêu và Sự Tự lập",
+    "title": "Chăm sóc bằng Tình yêu và Sự tự lập",
     "subtitle": "Hỗ trợ người cao tuổi sống vui, sống khỏe và duy trì khả năng tự lập với tiêu chuẩn Nhật Bản ngay tại Việt Nam.",
     "cta": "Tìm hiểu ngay",
     "qr_label": "090 453 38 58",
@@ -22,11 +22,11 @@
   },
   "services": {
     "badge": "Dịch vụ tiêu chuẩn Nhật Bản",
-    "title": "Năng lực Vượt trội từ tinh hoa 40 năm kinh nghiệm",
+    "title": "Năng lực vượt trội từ tinh hoa 40 năm kinh nghiệm",
     "description": "Kỹ thuật cao từ Nhật Bản, đào tạo chuyển giao cho người Việt, giám sát bởi chuyên gia người Nhật.",
     "items": {
       "rehab": {
-        "title": "Hỗ trợ Tự lập",
+        "title": "Hỗ trợ tự lập",
         "description": "Kỹ thuật cao từ Nhật Bản giúp người cao tuổi duy trì các hoạt động sinh hoạt hàng ngày."
       },
       "specialist": {
@@ -34,7 +34,7 @@
         "description": "Giám sát trực tiếp bởi các chuyên gia giàu kinh nghiệm từ Tập đoàn Nozomi Nhật Bản."
       },
       "training": {
-        "title": "Đào tạo Chuyển giao",
+        "title": "Đào tạo chuyển giao",
         "description": "Đội ngũ nhân viên Việt Nam được đào tạo bài bản theo quy chuẩn khắt khe của Nhật Bản."
       }
     },

@@ -36,53 +36,55 @@ export const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-brand-dark leading-[1.1]">
-            {t("hero.title")
-              .split(" ")
-              .reduce<{ words: string[]; groups: React.ReactNode[] }>(
-                (acc, word, i, arr) => {
-                  const isPink =
-                    word === "Tình" || word === "yêu" || word === "Love";
-                  const isGreen =
-                    word === "Sự" ||
-                    word === "Tự" ||
-                    word === "lập" ||
-                    word === "Self-reliance" ||
-                    word === "愛" ||
-                    word === "自立";
+            {
+              t("hero.title")
+                .split(" ")
+                .reduce<{ words: string[]; groups: React.ReactNode[] }>(
+                  (acc, word, i, arr) => {
+                    const isPink =
+                      word === "Tình" || word === "yêu" || word === "Love";
+                    const isGreen =
+                      word === "Sự" ||
+                      word === "tự" ||
+                      word === "lập" ||
+                      word === "Self-reliance" ||
+                      word === "愛" ||
+                      word === "自立";
 
-                  if (isGreen) {
-                    acc.words.push(word);
-                    // If next word is also green keep collecting, otherwise flush
-                    const nextIsGreen =
-                      i + 1 < arr.length &&
-                      (arr[i + 1] === "Sự" ||
-                        arr[i + 1] === "Tự" ||
-                        arr[i + 1] === "lập" ||
-                        arr[i + 1] === "Self-reliance" ||
-                        arr[i + 1] === "愛" ||
-                        arr[i + 1] === "自立");
-                    if (!nextIsGreen) {
+                    if (isGreen) {
+                      acc.words.push(word);
+                      // If next word is also green keep collecting, otherwise flush
+                      const nextIsGreen =
+                        i + 1 < arr.length &&
+                        (arr[i + 1] === "Sự" ||
+                          arr[i + 1] === "Tự" ||
+                          arr[i + 1] === "lập" ||
+                          arr[i + 1] === "Self-reliance" ||
+                          arr[i + 1] === "愛" ||
+                          arr[i + 1] === "自立");
+                      if (!nextIsGreen) {
+                        acc.groups.push(
+                          <span
+                            key={i}
+                            className="text-brand-green whitespace-nowrap"
+                          >
+                            {acc.words.join(" ")}{" "}
+                          </span>,
+                        );
+                        acc.words = [];
+                      }
+                    } else {
                       acc.groups.push(
-                        <span key={i} className="text-brand-green whitespace-nowrap">
-                          {acc.words.join(" ")}{" "}
-                        </span>
+                        <span key={i} className={isPink ? "text-primary" : ""}>
+                          {word}{" "}
+                        </span>,
                       );
-                      acc.words = [];
                     }
-                  } else {
-                    acc.groups.push(
-                      <span
-                        key={i}
-                        className={isPink ? "text-primary" : ""}
-                      >
-                        {word}{" "}
-                      </span>
-                    );
-                  }
-                  return acc;
-                },
-                { words: [], groups: [] }
-              ).groups}
+                    return acc;
+                  },
+                  { words: [], groups: [] },
+                ).groups
+            }
           </h1>
 
           <p className="text-xl text-brand-dark/70 max-w-lg leading-relaxed">
