@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Heart, UserCheck, GraduationCap, Sparkles } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,6 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const Services: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const services = [
     {
@@ -21,18 +20,21 @@ export const Services: React.FC = () => {
       title: t("services.items.rehab.title"),
       description: t("services.items.rehab.description"),
       icon: "Heart",
+      anchor: "self-reliance",
     },
     {
       id: 2,
       title: t("services.items.specialist.title"),
       description: t("services.items.specialist.description"),
       icon: "UserCheck",
+      anchor: "expert",
     },
     {
       id: 3,
       title: t("services.items.training.title"),
       description: t("services.items.training.description"),
       icon: "GraduationCap",
+      anchor: "training",
     },
   ];
 
@@ -94,41 +96,46 @@ export const Services: React.FC = () => {
             const theme = themes[index % themes.length];
 
             return (
-              <motion.div
+              <Link
                 key={service.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.15,
-                  ease: [0.21, 0.47, 0.32, 0.98],
-                }}
-                whileHover={{ y: -8 }}
-                className={cn(
-                  "p-10 rounded-4xl bg-white border shadow-xl transition-all group cursor-pointer",
-                  theme.border,
-                  theme.shadow,
-                  theme.hoverShadow,
-                )}
-                onClick={() => navigate("/services")}
+                to={`/services#${service.anchor}`}
+                className="block h-full"
+                aria-label={`Go to ${service.title}`}
               >
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    ease: [0.21, 0.47, 0.32, 0.98],
+                  }}
+                  whileHover={{ y: -8 }}
                   className={cn(
-                    "w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform",
-                    theme.iconBg,
-                    theme.iconColor,
+                    "h-full p-10 rounded-4xl bg-white border shadow-xl transition-all group cursor-pointer",
+                    theme.border,
+                    theme.shadow,
+                    theme.hoverShadow,
                   )}
                 >
-                  {iconMap[service.icon]}
-                </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-brand-dark/70 leading-relaxed font-medium">
-                  {service.description}
-                </p>
-              </motion.div>
+                  <div
+                    className={cn(
+                      "w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform",
+                      theme.iconBg,
+                      theme.iconColor,
+                    )}
+                  >
+                    {iconMap[service.icon]}
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-dark mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-brand-dark/70 leading-relaxed font-medium">
+                    {service.description}
+                  </p>
+                </motion.div>
+              </Link>
             );
           })}
         </div>

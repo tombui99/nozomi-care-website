@@ -1,13 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { cn } from "../lib/utils";
 import { useTranslation } from "react-i18next";
 
 export const Solutions: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const solutionItems = [
     {
@@ -16,6 +15,7 @@ export const Solutions: React.FC = () => {
       description: t("solutions.items.rehab.description"),
       image: "/services/rehab.png",
       color: "bg-brand-yellow-dark",
+      anchor: "rehab",
     },
     {
       id: 2,
@@ -25,6 +25,7 @@ export const Solutions: React.FC = () => {
       }) as string[],
       image: "/services/dementia.png",
       color: "bg-primary",
+      anchor: "dementia",
     },
     {
       id: 3,
@@ -34,6 +35,7 @@ export const Solutions: React.FC = () => {
       }) as string[],
       image: "/services/palliative.png",
       color: "bg-brand-green",
+      anchor: "palliative",
     },
   ];
 
@@ -51,59 +53,64 @@ export const Solutions: React.FC = () => {
 
         <div className="grid md:grid-cols-3 w-full">
           {solutionItems.map((item, index) => (
-            <motion.div
+            <Link
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: index * 0.2,
-                duration: 0.8,
-                ease: "easeOut",
-              }}
-              className="flex flex-col group h-full cursor-pointer"
-              onClick={() => navigate("/services")}
+              to={`/services#${item.anchor}`}
+              className="block h-full"
+              aria-label={`Go to ${item.title}`}
             >
-              {/* Image Section */}
-              <div className="relative h-100 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-
-              {/* Text Content Section */}
-              <div
-                className={cn(
-                  "flex-1 p-12 text-white min-h-100 flex flex-col justify-center",
-                  item.color.startsWith("bg-")
-                    ? item.color
-                    : `bg-linear-to-br ${item.color}`,
-                )}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: index * 0.2,
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                className="flex flex-col group h-full cursor-pointer"
               >
-                <h3 className="text-2xl font-bold mb-6 leading-tight">
-                  {item.title}
-                </h3>
+                {/* Image Section */}
+                <div className="relative h-100 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
 
-                {item.description && (
-                  <p className="text-lg leading-relaxed opacity-90 mb-8">
-                    {item.description}
-                  </p>
-                )}
+                {/* Text Content Section */}
+                <div
+                  className={cn(
+                    "flex-1 p-12 text-white min-h-100 flex flex-col justify-center",
+                    item.color.startsWith("bg-")
+                      ? item.color
+                      : `bg-linear-to-br ${item.color}`,
+                  )}
+                >
+                  <h3 className="text-2xl font-bold mb-6 leading-tight">
+                    {item.title}
+                  </h3>
 
-                {item.bullets && (
-                  <ul className="space-y-4">
-                    {item.bullets.map((bullet, i) => (
-                      <li key={i} className="flex gap-3 text-lg opacity-90">
-                        <Check className="shrink-0 mt-1" size={24} />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </motion.div>
+                  {item.description && (
+                    <p className="text-lg leading-relaxed opacity-90 mb-8">
+                      {item.description}
+                    </p>
+                  )}
+
+                  {item.bullets && (
+                    <ul className="space-y-4">
+                      {item.bullets.map((bullet, i) => (
+                        <li key={i} className="flex gap-3 text-lg opacity-90">
+                          <Check className="shrink-0 mt-1" size={24} />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

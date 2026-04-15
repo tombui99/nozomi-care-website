@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import {
   ArrowRight,
   BadgeCheck,
@@ -111,6 +112,7 @@ const serviceSections: ServiceSection[] = [
 ];
 
 const heroHighlights = [
+  "Hỗ trợ tự lập",
   "Giám sát chuyên gia Nhật Bản",
   "Nozomi Method",
   "Phục hồi chức năng Polaris",
@@ -127,9 +129,28 @@ const iconBySection = {
 } as const;
 
 const ServicesPage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "");
+    if (!hash) return;
+
+    const element = document.getElementById(hash);
+    if (!element) return;
+
+    const timer = window.setTimeout(() => {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [location.hash]);
+
   return (
     <div className="pt-24 pb-20 overflow-hidden bg-brand-light">
-      <section className="relative px-6 py-20 md:py-24">
+      <section
+        id="self-reliance"
+        className="relative px-6 py-20 md:py-24 scroll-mt-28 md:scroll-mt-36"
+      >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,142,170,0.16),_transparent_35%),radial-gradient(circle_at_left,_rgba(75,132,18,0.12),_transparent_30%)]" />
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -160,12 +181,13 @@ const ServicesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto space-y-8 md:space-y-12">
           {serviceSections.map((section) => (
             <motion.article
+              id={section.id}
               key={section.id}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.18 }}
               transition={{ duration: 0.7 }}
-              className={`grid gap-8 md:gap-10 items-center rounded-[2rem] p-5 md:p-8 bg-white shadow-xl ring-1 ring-gray-100 lg:grid-cols-2 ${section.reverse ? "lg:grid-flow-col-dense" : ""}`}
+              className={`scroll-mt-28 md:scroll-mt-36 grid gap-8 md:gap-10 items-center rounded-[2rem] p-5 md:p-8 bg-white shadow-xl ring-1 ring-gray-100 lg:grid-cols-2 ${section.reverse ? "lg:grid-flow-col-dense" : ""}`}
             >
               <div
                 className={`relative ${section.reverse ? "lg:order-2" : ""}`}
