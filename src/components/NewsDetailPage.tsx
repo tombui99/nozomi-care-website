@@ -30,6 +30,7 @@ interface NewsArticle {
   authorPhoto?: string;
   createdAt: any;
   youtubeUrl?: string;
+  seoTags?: string[] | string;
 }
 
 export const NewsDetailPage: React.FC = () => {
@@ -151,6 +152,15 @@ export const NewsDetailPage: React.FC = () => {
   }
 
   if (!article) return null;
+
+  const seoTags = Array.isArray(article.seoTags)
+    ? article.seoTags
+    : typeof article.seoTags === "string"
+      ? article.seoTags
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+      : [];
 
   return (
     <div className="pt-32 pb-20">
@@ -280,6 +290,26 @@ export const NewsDetailPage: React.FC = () => {
                 modules={{ toolbar: false }}
                 className="article-reader"
               />
+
+              {seoTags.length > 0 && (
+                <div className="mt-12 border-t border-gray-100 pt-8">
+                  <div className="flex flex-wrap items-center gap-4">
+                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+                      Tags:
+                    </span>
+                    <div className="flex flex-wrap gap-3">
+                      {seoTags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-gray-50 px-5 py-2 text-base font-medium text-gray-700 shadow-sm ring-1 ring-gray-200"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {article.youtubeUrl && (
                 <div className="mt-12">
