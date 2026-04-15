@@ -1,16 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import {
-  ArrowRight,
-  BadgeCheck,
-  BrainCircuit,
-  CheckCircle2,
-  HeartPulse,
-  Sparkles,
-  GraduationCap,
-  Activity,
-} from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import { ContactButton } from "./ContactButton";
 
 type ServiceSection = {
@@ -110,23 +101,6 @@ const serviceSections: ServiceSection[] = [
     accent: "from-brand-dark/10 to-white",
   },
 ];
-
-const heroHighlights = [
-  "Hỗ trợ tự lập",
-  "Giám sát chuyên gia Nhật Bản",
-  "Nozomi Method",
-  "Phục hồi chức năng Polaris",
-  "Chăm sóc sa sút trí tuệ",
-  "Chăm sóc giảm nhẹ",
-];
-
-const iconBySection = {
-  expert: BadgeCheck,
-  training: GraduationCap,
-  rehab: Activity,
-  dementia: BrainCircuit,
-  palliative: HeartPulse,
-} as const;
 
 const ServicesPage: React.FC = () => {
   const location = useLocation();
