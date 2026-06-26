@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
               <ArrowRight size={20} />
             </button>
             <a
-              href="tel:0904533858"
+              href="tel:0924066688"
               className="flex items-center gap-4 p-4 rounded-2xl border border-primary/10 bg-white shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 group"
             >
               <div className="p-3 bg-brand-yellow/20 rounded-xl group-hover:bg-brand-yellow/30 transition-colors">
@@ -115,7 +115,7 @@ export const Hero: React.FC = () => {
                   {t("common.contact_cta")}
                 </span>
                 <span className="text-sm font-bold text-brand-dark">
-                  090 453 38 58
+                  09240 666 88
                 </span>
               </div>
             </a>

@@ -39,9 +39,9 @@ export const ContactButton: React.FC<ContactButtonProps> = ({
       bgColor: "bg-[#1877F2]/10",
     },
     {
-      label: "090 453 38 58",
+      label: "09240 666 88",
       icon: <Phone size={18} />,
-      href: "tel:0904533858",
+      href: "tel:0924066688",
       color: "text-brand-green",
       bgColor: "bg-brand-green/10",
     },

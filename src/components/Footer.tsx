@@ -42,7 +42,7 @@ export const Footer = () => {
                 />
               </a>
               <a
-                href="tel:0904533858"
+                href="tel:0924066688"
                 className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-green hover:border-brand-green transition-all group"
               >
                 <Phone
@@ -82,7 +82,7 @@ export const Footer = () => {
               </div>
               <div className="flex gap-4">
                 <Phone className="text-primary shrink-0" size={20} />
-                <span className="text-white/60 font-medium">090 453 38 58</span>
+                <span className="text-white/60 font-medium">09240 666 88</span>
               </div>
               <div className="flex gap-4">
                 <Mail className="text-primary shrink-0" size={20} />

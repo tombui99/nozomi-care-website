@@ -36,6 +36,8 @@ export const NewsCard: React.FC<NewsCardProps> = ({
               "https://images.unsplash.com/photo-1516549291061-2628da6e8a4a?auto=format&fit=crop&q=80"
             }
             alt={title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
