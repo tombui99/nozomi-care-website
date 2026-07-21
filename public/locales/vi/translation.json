@@ -163,7 +163,16 @@
     "login": "Đăng nhập",
     "logout": "Đăng xuất",
     "admin_only": "Chỉ dành cho Quản trị viên",
-    "unauthorized": "Email này chưa được cấp quyền quản trị."
+    "unauthorized": "Email này chưa được cấp quyền quản trị.",
+    "admin_login": "Đăng nhập quản trị",
+    "admin_login_description": "Đăng nhập bằng tên người dùng quản trị hoặc tài khoản Google đã được cấp quyền.",
+    "username": "Tên người dùng",
+    "password": "Mật khẩu",
+    "or": "hoặc",
+    "continue_google": "Tiếp tục với Google",
+    "invalid_credentials": "Tên người dùng hoặc mật khẩu không đúng, hoặc tài khoản này không có quyền quản trị.",
+    "provider_disabled": "Đăng nhập bằng tên người dùng/mật khẩu chưa được bật trong Firebase.",
+    "close": "Đóng"
   },
   "news": {
     "title": "Tin tức & Sự kiện",

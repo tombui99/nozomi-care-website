@@ -35,6 +35,18 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser to see the result! ⚡️
 
+### 4. Seed the password administrator
+
+Enable **Email/Password** under Firebase Console → Authentication → Sign-in method. Then provide a Firebase service-account key (or Application Default Credentials) and run:
+
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/service-account.json \
+ADMIN_PASSWORD='Admin123!' \
+npm run seed:admin
+```
+
+This creates or updates the single password account exposed by the website as username `admin@nozomicare.vn`. The script also creates the matching `admins/admin@nozomicare.vn` Firestore document. The password is deliberately supplied through an environment variable so it is never included in the browser bundle or committed to source control. Run the seed command again with a new value to rotate it.
+
 ---
 
 ## 🛠 Tech Stack

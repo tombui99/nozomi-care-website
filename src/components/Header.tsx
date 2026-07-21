@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { ContactButton } from "./ContactButton";
 import { useAuth } from "../lib/auth";
+import { LoginDialog } from "./LoginDialog";
 
 const languages = [
   { code: "vi", label: "Tiếng Việt", flag: "🇻🇳" },
@@ -18,9 +19,10 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const { user, login, logout, loading } = useAuth();
+  const { user, logout, loading } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,14 +92,21 @@ export const Header = () => {
                 <button 
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary hover:scale-105 transition-transform"
+                  aria-label={user.displayName || user.email || t("auth.admin_only")}
                 >
-                  <img src={user.photoURL || ''} alt={user.displayName || ''} className="w-full h-full object-cover" />
+                  {user.photoURL ? (
+                    <img src={user.photoURL} alt={user.displayName || ''} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="flex h-full w-full items-center justify-center bg-primary/10 text-primary">
+                      <UserIcon size={20} />
+                    </span>
+                  )}
                 </button>
                 {isUserMenuOpen && (
                   <div className="absolute top-full right-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl py-2 z-50 overflow-hidden">
                     <div className="px-4 py-2 border-b border-gray-50 flex items-center gap-2">
                        <UserIcon size={16} className="text-gray-400" />
-                       <span className="text-xs font-semibold text-gray-700 truncate">{user.displayName}</span>
+                       <span className="text-xs font-semibold text-gray-700 truncate">{user.displayName || user.email}</span>
                     </div>
                     <button
                       onClick={() => { logout(); setIsUserMenuOpen(false); }}
@@ -111,7 +120,7 @@ export const Header = () => {
               </div>
             ) : (
               <button 
-                onClick={login}
+                onClick={() => setIsLoginOpen(true)}
                 className="flex items-center gap-2 text-sm font-semibold text-brand-dark hover:text-primary transition-colors"
               >
                 <LogIn size={18} />
@@ -244,8 +253,14 @@ export const Header = () => {
             {user ? (
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
-                  <img src={user.photoURL || ''} alt={user.displayName || ''} className="w-10 h-10 rounded-full" />
-                  <span className="font-bold text-brand-dark">{user.displayName}</span>
+                  {user.photoURL ? (
+                    <img src={user.photoURL} alt={user.displayName || ''} className="w-10 h-10 rounded-full" />
+                  ) : (
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <UserIcon size={20} />
+                    </span>
+                  )}
+                  <span className="font-bold text-brand-dark">{user.displayName || user.email}</span>
                 </div>
                 <button
                   onClick={() => { logout(); setIsMobileMenuOpen(false); }}
@@ -257,7 +272,7 @@ export const Header = () => {
               </div>
             ) : (
               <button 
-                onClick={() => { login(); setIsMobileMenuOpen(false); }}
+                onClick={() => { setIsLoginOpen(true); setIsMobileMenuOpen(false); }}
                 className="flex items-center gap-2 font-semibold text-brand-dark"
               >
                 <LogIn size={18} />
@@ -272,6 +287,7 @@ export const Header = () => {
           />
         </motion.div>
       )}
+      <LoginDialog open={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </header>
   );
 };

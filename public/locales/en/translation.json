@@ -163,7 +163,16 @@
     "login": "Login",
     "logout": "Logout",
     "admin_only": "Admin Only",
-    "unauthorized": "This email is not authorized as an admin."
+    "unauthorized": "This email is not authorized as an admin.",
+    "admin_login": "Admin login",
+    "admin_login_description": "Sign in with the administrator username or an authorized Google account.",
+    "username": "Username",
+    "password": "Password",
+    "or": "or",
+    "continue_google": "Continue with Google",
+    "invalid_credentials": "The username or password is incorrect, or this account is not an administrator.",
+    "provider_disabled": "Username/password login has not been enabled in Firebase yet.",
+    "close": "Close"
   },
   "news": {
     "title": "News & Events",

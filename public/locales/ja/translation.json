@@ -163,7 +163,16 @@
     "login": "ログイン",
     "logout": "ログアウト",
     "admin_only": "管理者のみ",
-    "unauthorized": "このメールアドレスは管理者として承認されていません。"
+    "unauthorized": "このメールアドレスは管理者として承認されていません。",
+    "admin_login": "管理者ログイン",
+    "admin_login_description": "管理者ユーザー名、または承認済みのGoogleアカウントでログインしてください。",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "or": "または",
+    "continue_google": "Googleで続ける",
+    "invalid_credentials": "ユーザー名またはパスワードが正しくないか、このアカウントには管理者権限がありません。",
+    "provider_disabled": "Firebaseでユーザー名・パスワード認証がまだ有効になっていません。",
+    "close": "閉じる"
   },
   "news": {
     "title": "ニュース＆イベント",
