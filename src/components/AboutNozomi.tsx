@@ -1,3 +1,4 @@
+import { getPhoto } from "../photos";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { CheckCircle2, Sparkles } from "lucide-react";
@@ -5,7 +6,7 @@ import { useRef } from "react";
 import { ContactButton } from "./ContactButton";
 
 export const AboutNozomi = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   const visionItems = ["1", "2", "3"];
@@ -147,8 +148,8 @@ export const AboutNozomi = () => {
                 className="relative z-10 rounded-2xl overflow-hidden shadow-2xl"
               >
                 <img
-                  src="/hero.png"
-                  alt="Vision"
+                  src={getPhoto("staff-and-residents", i18n.resolvedLanguage).url}
+                  alt={getPhoto("staff-and-residents", i18n.resolvedLanguage).alt}
                   className="w-full aspect-4/5 object-cover"
                 />
               </motion.div>

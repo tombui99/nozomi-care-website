@@ -1,3 +1,4 @@
+import { getPhoto } from "../photos";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -62,8 +63,8 @@ const serviceSections: ServiceSection[] = [
       "Hỗ trợ sinh hoạt hằng ngày như đi lại, tắm rửa, vệ sinh cá nhân và các hoạt động ADL.",
       "Tư vấn và sử dụng thiết bị hỗ trợ phù hợp như khung tập đi hoặc dụng cụ vận động.",
     ],
-    image: "/services/pdf/rehab-room.png",
-    imageAlt: "Không gian phục hồi chức năng tại Nozomi Care Việt Nam",
+    image: getPhoto("supported-strength").url,
+    imageAlt: "Hỗ trợ người cao tuổi tập phục hồi sức mạnh",
     accent: "from-brand-green/15 to-white",
   },
   {
@@ -79,8 +80,8 @@ const serviceSections: ServiceSection[] = [
       "Hệ thống camera khu vực chung, nút gọi khẩn cấp và nhân viên trực 24/7 đảm bảo an toàn.",
       "Hoạt động sinh hoạt và vận động được thiết kế phù hợp với thể trạng từng người.",
     ],
-    image: "/services/pdf/dementia-living.png",
-    imageAlt: "Không gian chăm sóc người cao tuổi sa sút trí tuệ",
+    image: getPhoto("conversation-and-laughter").url,
+    imageAlt: "Trò chuyện và đồng hành cùng người cao tuổi",
     reverse: true,
     accent: "from-secondary/20 to-white",
   },
@@ -96,8 +97,8 @@ const serviceSections: ServiceSection[] = [
       "Trung tâm duy trì kết nối với bác sĩ và cơ sở y tế để theo dõi những thay đổi về sức khỏe.",
       "Chăm sóc tinh thần, lắng nghe và đồng hành cùng gia đình trong suốt giai đoạn cuối đời.",
     ],
-    image: "/services/pdf/palliative-care.png",
-    imageAlt: "Không gian chăm sóc giảm nhẹ tại Nozomi Care Việt Nam",
+    image: getPhoto("bedside-companionship").url,
+    imageAlt: "Đồng hành và chăm sóc người cao tuổi tại giường",
     accent: "from-brand-dark/10 to-white",
   },
 ];

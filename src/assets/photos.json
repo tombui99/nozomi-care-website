@@ -1,0 +1,461 @@
+{
+  "welcoming-space": {
+    "source": "Facility/1790057301973_278408807853329060_2980452595908026661_72c68d4133df07baedd7b6dba01bd402.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Không gian sinh hoạt và vận động với cửa sổ lớn",
+      "en": "Shared activity and exercise space with large windows"
+    }
+  },
+  "accessible-bathroom": {
+    "source": "Facility/1790057302050_278408807853329060_2980452595908026661_7cd0e52b553118ab4a754838c1e5afed.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Phòng tắm với tay vịn hỗ trợ",
+      "en": "Bathroom with support rails"
+    }
+  },
+  "residential-room": {
+    "source": "Facility/1790057302090_278408807853329060_2980452595908026661_9c899a3b200109dca7d8d6570f81a1dc.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Phòng lưu trú với giường chăm sóc",
+      "en": "Residential room with care beds"
+    }
+  },
+  "shared-dining": {
+    "source": "Facility/1790057306945_278408807853329060_2980452595908026661_1332658534a8324948bd6fc50c6aa417.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Khu bàn ăn và sinh hoạt chung",
+      "en": "Shared dining and activity area"
+    }
+  },
+  "strength-equipment": {
+    "source": "Facility/1791773939131_278408807853329060_3898202405750602592_3c17e974c30dcb64ac0b979c7017cf40.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Thiết bị hỗ trợ tập sức mạnh",
+      "en": "Equipment for supported strength exercises"
+    }
+  },
+  "walking-equipment": {
+    "source": "Facility/1791773939154_278408807853329060_3898202405750602592_3c68ad3e5d90ac726890a5d09c9a2434.jpg",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Máy tập đi bộ trong khu vận động",
+      "en": "Treadmills in the exercise area"
+    }
+  },
+  "sunlit-exercise-space": {
+    "source": "Facility/1791773939168_278408807853329060_3898202405750602592_0988411efdddcbfffd915f3125b2fe89.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Khu máy tập đi bộ bên cửa sổ",
+      "en": "Walking exercise equipment beside the windows"
+    }
+  },
+  "supported-strength": {
+    "source": "Others/1791773939180_278408807853329060_3898202405750602592_fa522201b5fec31cb6dd4db68d612966.jpg",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên hỗ trợ người cao tuổi tập trên thiết bị",
+      "en": "Staff assisting an older adult with exercise equipment"
+    }
+  },
+  "community-room": {
+    "source": "Others/20260828_091404.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Không gian sinh hoạt chung rộng và sáng",
+      "en": "Spacious, bright communal room"
+    }
+  },
+  "community-gathering": {
+    "source": "Others/Bản sao của IMG_2640.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi và đội ngũ cùng chụp ảnh lưu niệm",
+      "en": "Older adults and staff gathering for a group photo"
+    }
+  },
+  "shared-screen-time": {
+    "source": "Others/IMG_0102 (1).HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi cùng xem chương trình trong phòng sinh hoạt",
+      "en": "Older adults watching a programme together"
+    }
+  },
+  "outdoor-walking": {
+    "source": "Others/IMG_2675.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên đồng hành cùng người cao tuổi tập đi ngoài trời",
+      "en": "Staff supporting an older adult on an outdoor walk"
+    }
+  },
+  "morning-conversation": {
+    "source": "Others/IMG_3446 (1).HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên trò chuyện cùng người cao tuổi bên cửa sổ",
+      "en": "Staff talking with older adults beside the windows"
+    }
+  },
+  "guided-equipment": {
+    "source": "Others/IMG_3932.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi tập vận động có nhân viên hướng dẫn",
+      "en": "An older adult using exercise equipment with staff guidance"
+    }
+  },
+  "movement-game": {
+    "source": "Others/IMG_4209 2.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Hoạt động vận động với vòng và thẻ màu",
+      "en": "Movement activity with hoops and coloured cards"
+    }
+  },
+  "singing-together": {
+    "source": "Others/IMG_4314.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi tham gia hoạt động ca hát",
+      "en": "An older adult taking part in a singing activity"
+    }
+  },
+  "friends-together": {
+    "source": "Others/IMG_4379.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Những người bạn cùng chụp ảnh tại khu sinh hoạt",
+      "en": "Friends posing together in the activity area"
+    }
+  },
+  "staff-and-residents": {
+    "source": "Others/IMG_4386.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Đội ngũ và người cao tuổi cùng lưu giữ khoảnh khắc",
+      "en": "Staff and older adults sharing a group moment"
+    }
+  },
+  "team-gathering": {
+    "source": "Others/IMG_4744 (1).HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Đội ngũ giao lưu cùng người cao tuổi",
+      "en": "Staff meeting with older adults"
+    }
+  },
+  "care-team-introduction": {
+    "source": "Others/IMG_4744.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Buổi giới thiệu và giao lưu cùng đội ngũ chăm sóc",
+      "en": "Care team introductions and conversation"
+    }
+  },
+  "colouring-activity": {
+    "source": "Others/IMG_5099.JPG",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi tập trung tô màu theo sở thích",
+      "en": "An older adult enjoying a colouring activity"
+    }
+  },
+  "group-stretching": {
+    "source": "Others/IMG_5126.JPG",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Cả nhóm cùng thực hiện bài vận động nhẹ",
+      "en": "A group taking part in gentle stretching"
+    }
+  },
+  "team-practice": {
+    "source": "Others/IMG_5433.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Đội ngũ thực hành trong không gian sinh hoạt",
+      "en": "Staff practising together in the communal space"
+    }
+  },
+  "staff-learning": {
+    "source": "Others/IMG_5436.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Đội ngũ trao đổi và thực hành tại trung tâm",
+      "en": "Staff learning and practising at the centre"
+    }
+  },
+  "ball-exercises": {
+    "source": "Others/IMG_5983.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi tập vận động với bóng mềm",
+      "en": "Older adults exercising with soft balls"
+    }
+  },
+  "joyful-movement": {
+    "source": "Others/IMG_6047 (1).HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Niềm vui trong giờ vận động cùng bóng",
+      "en": "Enjoying a group ball exercise"
+    }
+  },
+  "guided-group-exercise": {
+    "source": "Others/IMG_6071.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Nhân viên hướng dẫn bài vận động theo nhóm",
+      "en": "Staff leading a group exercise"
+    }
+  },
+  "seated-movement": {
+    "source": "Others/IMG_6092.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi cùng tập vận động trên ghế",
+      "en": "Older adults taking part in seated exercise"
+    }
+  },
+  "daily-circle": {
+    "source": "Others/IMG_6124 (1).HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Sinh hoạt nhóm trong không gian nhiều ánh sáng",
+      "en": "Group activities in a bright shared space"
+    }
+  },
+  "individual-care": {
+    "source": "Others/IMG_6345.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Nhân viên hỗ trợ riêng cho người cao tuổi",
+      "en": "A staff member providing individual support"
+    }
+  },
+  "ball-and-conversation": {
+    "source": "Others/IMG_6359.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi trò chuyện và chơi bóng cùng nhân viên",
+      "en": "Older adults chatting and playing with a ball alongside staff"
+    }
+  },
+  "circle-activity": {
+    "source": "Others/IMG_6369.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Hoạt động với bóng theo nhóm nhỏ",
+      "en": "A small-group ball activity"
+    }
+  },
+  "tabletop-games": {
+    "source": "Others/IMG_6423.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi cùng tham gia trò chơi trên bàn",
+      "en": "Older adults enjoying tabletop games"
+    }
+  },
+  "creative-companionship": {
+    "source": "Others/IMG_6432.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên đồng hành trong hoạt động tô màu",
+      "en": "Staff companionship during a colouring activity"
+    }
+  },
+  "personal-activity-support": {
+    "source": "Others/IMG_6453.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên hỗ trợ người cao tuổi trong hoạt động cá nhân",
+      "en": "Staff supporting an older adult with an individual activity"
+    }
+  },
+  "supported-treadmill": {
+    "source": "Others/IMG_6474.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi tập đi trên máy có tay vịn",
+      "en": "An older adult walking on a treadmill with handrails"
+    }
+  },
+  "everyday-smiles": {
+    "source": "Others/IMG_6569 (1).HEIC",
+    "width": 1600,
+    "height": 1442,
+    "alt": {
+      "vi": "Khoảnh khắc vui vẻ trong giờ sinh hoạt",
+      "en": "A happy moment during daily activities"
+    }
+  },
+  "community-activity": {
+    "source": "Others/IMG_6752.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi tham gia hoạt động trong phòng sinh hoạt chung",
+      "en": "Older adults taking part in a communal activity"
+    }
+  },
+  "attentive-companionship": {
+    "source": "Others/IMG_6842.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên trò chuyện và đồng hành cùng người cao tuổi",
+      "en": "Staff offering conversation and companionship"
+    }
+  },
+  "keyda-team": {
+    "source": "Others/IMG_7034.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Đội ngũ chăm sóc cùng tạo hình trái tim",
+      "en": "The care team making heart gestures together"
+    }
+  },
+  "shared-table": {
+    "source": "Others/IMG_7525.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi quây quần tại bàn sinh hoạt",
+      "en": "Older adults gathered around an activity table"
+    }
+  },
+  "relaxation-time": {
+    "source": "Others/IMG_9192.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi cùng thư giãn và ngâm chân",
+      "en": "Older adults relaxing with foot baths"
+    }
+  },
+  "small-group-support": {
+    "source": "Others/IMG_9794.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên hỗ trợ hoạt động trong nhóm nhỏ",
+      "en": "Staff supporting a small-group activity"
+    }
+  },
+  "focused-activity": {
+    "source": "Others/IMG_9801.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên hướng dẫn người cao tuổi trong hoạt động tại bàn",
+      "en": "Staff guiding an older adult during a tabletop activity"
+    }
+  },
+  "assisted-outdoor-mobility": {
+    "source": "Others/IMG_9811.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Hai nhân viên hỗ trợ người cao tuổi tập đi ngoài trời",
+      "en": "Two staff members supporting an older adult walking outdoors"
+    }
+  },
+  "walking-with-support": {
+    "source": "Others/IMG_9828.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi tập đi trong nhà với sự hỗ trợ của nhân viên",
+      "en": "An older adult practising walking indoors with staff support"
+    }
+  },
+  "conversation-and-laughter": {
+    "source": "Others/IMG_9915.HEIC",
+    "width": 1600,
+    "height": 1200,
+    "alt": {
+      "vi": "Người cao tuổi và nhân viên cùng trò chuyện vui vẻ",
+      "en": "Older adults and staff sharing conversation and laughter"
+    }
+  },
+  "bedside-conversation": {
+    "source": "Others/IMG_9922.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên trò chuyện với người cao tuổi tại phòng lưu trú",
+      "en": "A staff member talking with an older adult in a residential room"
+    }
+  },
+  "bedside-companionship": {
+    "source": "Others/IMG_9935.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Khoảnh khắc đồng hành bên giường chăm sóc",
+      "en": "A moment of companionship beside a care bed"
+    }
+  },
+  "residential-support": {
+    "source": "Others/IMG_9936.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Nhân viên hỗ trợ người cao tuổi bên giường",
+      "en": "Staff offering support beside a care bed"
+    }
+  },
+  "walking-frame-practice": {
+    "source": "Others/IMG_9963.HEIC",
+    "width": 1200,
+    "height": 1600,
+    "alt": {
+      "vi": "Người cao tuổi tập di chuyển với khung hỗ trợ",
+      "en": "An older adult practising walking with a support frame"
+    }
+  }
+}

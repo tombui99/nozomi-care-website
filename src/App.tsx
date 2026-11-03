@@ -13,6 +13,8 @@ import { NewsPage } from "./components/NewsPage";
 import { NewsDetailPage } from "./components/NewsDetailPage";
 import { NewsEditor } from "./components/NewsEditor";
 
+import { GalleryPage } from "./components/GalleryPage";
+
 function Home() {
   return (
     <>
@@ -34,6 +36,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutNozomi />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/thu-vien-anh" element={<GalleryPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/news/:id" element={<NewsDetailPage />} />
             <Route path="/admin/news/new" element={<NewsEditor />} />

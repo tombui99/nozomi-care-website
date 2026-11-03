@@ -1,3 +1,4 @@
+import { getPhoto } from "../photos";
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ export const Solutions: React.FC = () => {
       id: 1,
       title: t("solutions.items.rehab.title"),
       description: t("solutions.items.rehab.description"),
-      image: "/services/rehab.png",
+      image: getPhoto("supported-strength").url,
       color: "bg-brand-yellow-dark",
       anchor: "rehab",
     },
@@ -23,7 +24,7 @@ export const Solutions: React.FC = () => {
       bullets: t("solutions.items.dementia.bullets", {
         returnObjects: true,
       }) as string[],
-      image: "/services/dementia.png",
+      image: getPhoto("conversation-and-laughter").url,
       color: "bg-primary",
       anchor: "dementia",
     },
@@ -33,7 +34,7 @@ export const Solutions: React.FC = () => {
       bullets: t("solutions.items.palliative.bullets", {
         returnObjects: true,
       }) as string[],
-      image: "/services/palliative.png",
+      image: getPhoto("bedside-companionship").url,
       color: "bg-brand-green",
       anchor: "palliative",
     },

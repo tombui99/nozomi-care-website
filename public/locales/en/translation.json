@@ -9,7 +9,8 @@
     "about": "About Us",
     "services": "Services",
     "news": "News",
-    "contact": "Contact"
+    "contact": "Contact",
+    "gallery": "Gallery"
   },
   "hero": {
     "badge": "40 years of experience from Japan",
@@ -18,7 +19,12 @@
     "cta": "Learn More",
     "qr_label": "09240 666 88",
     "stats_label": "Experience in Care",
-    "floating_label": "Japanese Standard Care - Heartfelt & Professional"
+    "floating_label": "Japanese Standard Care - Heartfelt & Professional",
+    "values": {
+      "care": "Compassion",
+      "safety": "Safety",
+      "connection": "Connection"
+    }
   },
   "services": {
     "badge": "Japanese Standard Service",
@@ -213,5 +219,54 @@
       "copied": "Copied!",
       "error_saving": "An error occurred while saving the article."
     }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Gallery",
+      "title": "Moments that make life at Nozomi Care",
+      "text": "Explore our spaces, services, daily activities and memorable events at Nozomi Care."
+    },
+    "categories": {
+      "facilities": "Facilities",
+      "services": "Services",
+      "daily": "Daily activities",
+      "events": "Events"
+    },
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "viewImage": "View photo {{number}}",
+    "albums": {
+      "spaces": {
+        "title": "Spaces & facilities",
+        "description": "Residential rooms, shared spaces, bathrooms and exercise equipment at Nozomi Care."
+      },
+      "mobility": {
+        "title": "Rehabilitation & mobility care",
+        "description": "Guided exercise and companionship through every step."
+      },
+      "personalCare": {
+        "title": "Personal & residential care",
+        "description": "Daily-living support and moments of companionship in residential rooms."
+      },
+      "movement": {
+        "title": "Everyday movement",
+        "description": "Gentle exercises, ball games and group activities."
+      },
+      "everyday": {
+        "title": "Joy in daily life",
+        "description": "Colouring, singing, conversation and moments of connection."
+      },
+      "gatherings": {
+        "title": "Gatherings & shared moments",
+        "description": "Older adults and staff meeting, sharing and making memories together."
+      },
+      "team": {
+        "title": "Our team & shared learning",
+        "description": "Staff moments, practice and learning in the care environment."
+      }
+    },
+    "all": "All",
+    "close": "Close",
+    "imagesCount": "{{count}} photos"
   }
 }

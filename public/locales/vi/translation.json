@@ -9,7 +9,8 @@
     "about": "Về chúng tôi",
     "services": "Dịch vụ",
     "news": "Tin tức",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "gallery": "Thư viện ảnh"
   },
   "hero": {
     "badge": "40 năm kinh nghiệm từ Nhật Bản",
@@ -18,7 +19,12 @@
     "cta": "Tìm hiểu ngay",
     "qr_label": "09240 666 88",
     "stats_label": "Kinh nghiệm chăm sóc",
-    "floating_label": "Chăm sóc chuẩn Nhật Bản - Tận tâm & Chuyên nghiệp"
+    "floating_label": "Chăm sóc chuẩn Nhật Bản - Tận tâm & Chuyên nghiệp",
+    "values": {
+      "care": "Tận tâm",
+      "safety": "An toàn",
+      "connection": "Kết nối"
+    }
   },
   "services": {
     "badge": "Dịch vụ tiêu chuẩn Nhật Bản",
@@ -213,5 +219,54 @@
       "copied": "Đã sao chép!",
       "error_saving": "Có lỗi xảy ra khi lưu bài viết."
     }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Thư viện ảnh",
+      "title": "Những khoảnh khắc tạo nên nhịp sống Nozomi Care",
+      "text": "Khám phá không gian, dịch vụ, hoạt động hằng ngày và những sự kiện đáng nhớ tại Nozomi Care."
+    },
+    "categories": {
+      "facilities": "Cơ sở vật chất",
+      "services": "Sản phẩm dịch vụ",
+      "daily": "Hoạt động hằng ngày",
+      "events": "Sự kiện"
+    },
+    "previous": "Ảnh trước",
+    "next": "Ảnh tiếp theo",
+    "viewImage": "Xem ảnh {{number}}",
+    "albums": {
+      "spaces": {
+        "title": "Không gian & cơ sở vật chất",
+        "description": "Phòng lưu trú, khu sinh hoạt, phòng tắm và thiết bị vận động tại Nozomi Care."
+      },
+      "mobility": {
+        "title": "Chăm sóc phục hồi & vận động",
+        "description": "Những buổi tập có hướng dẫn và sự đồng hành trong từng bước đi."
+      },
+      "personalCare": {
+        "title": "Chăm sóc cá nhân & lưu trú",
+        "description": "Hỗ trợ sinh hoạt và những khoảnh khắc đồng hành tại phòng lưu trú."
+      },
+      "movement": {
+        "title": "Vận động mỗi ngày",
+        "description": "Bài tập nhẹ, trò chơi với bóng và hoạt động theo nhóm."
+      },
+      "everyday": {
+        "title": "Niềm vui trong sinh hoạt hằng ngày",
+        "description": "Tô màu, ca hát, trò chuyện và những khoảnh khắc gắn kết."
+      },
+      "gatherings": {
+        "title": "Giao lưu & những khoảnh khắc chung",
+        "description": "Người cao tuổi và đội ngũ cùng gặp gỡ, chia sẻ và lưu giữ kỷ niệm."
+      },
+      "team": {
+        "title": "Đội ngũ & hoạt động học hỏi",
+        "description": "Hình ảnh đội ngũ, thực hành và trao đổi trong môi trường chăm sóc."
+      }
+    },
+    "all": "Tất cả",
+    "close": "Đóng",
+    "imagesCount": "{{count}} ảnh"
   }
 }

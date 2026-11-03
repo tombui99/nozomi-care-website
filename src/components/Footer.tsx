@@ -8,6 +8,7 @@ export const Footer = () => {
     { label: t("navigation.home"), href: "/" },
     { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.services"), href: "/services" },
+    { label: t("navigation.gallery"), href: "/thu-vien-anh" },
     { label: t("navigation.news"), href: "/#news" },
   ];
 

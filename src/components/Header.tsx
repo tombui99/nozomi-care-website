@@ -36,6 +36,7 @@ export const Header = () => {
     { label: t("navigation.home"), href: "/" },
     { label: t("navigation.about"), href: "/about" },
     { label: t("navigation.services"), href: "/services" },
+    { label: t("navigation.gallery"), href: "/thu-vien-anh" },
     { label: t("navigation.news"), href: "/news" },
   ];
 
@@ -67,7 +68,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -170,7 +171,7 @@ export const Header = () => {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <button
             onClick={() => setIsLangOpen(!isLangOpen)}
             className="flex items-center gap-1.5 px-2 py-1 rounded-lg border border-gray-200 text-xs font-bold"
@@ -190,7 +191,7 @@ export const Header = () => {
       {/* Language Popup (Mobile) */}
       {isLangOpen && (
         <div
-          className="md:hidden fixed inset-0 z-50 bg-black/20 backdrop-blur-sm flex items-end"
+          className="lg:hidden fixed inset-0 z-50 bg-black/20 backdrop-blur-sm flex items-end"
           onClick={() => setIsLangOpen(false)}
         >
           <motion.div
@@ -231,7 +232,7 @@ export const Header = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-0 right-0 bg-white border-t border-gray-100 p-6 flex flex-col gap-4 md:hidden shadow-xl"
+          className="absolute top-full left-0 right-0 bg-white border-t border-gray-100 p-6 flex flex-col gap-4 lg:hidden shadow-xl"
         >
           {navItems.map((item) => (
             <Link

@@ -112,3 +112,80 @@ body {
   border-bottom-right-radius: 12px;
   min-height: 400px;
 }
+
+/* Shared photography, with Nozomi's existing brand palette. */
+.nozomi-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 88px;
+  min-height: clamp(620px, calc(100svh - 88px), 820px);
+  display: flex;
+  align-items: center;
+  padding: 64px 24px;
+  background: var(--color-brand-light);
+}
+.nozomi-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #fff5f7 0%, #fff5f7fa 25%, #fff5f7ed 38%, #fff5f7a6 52%, #fff5f733 66%, transparent 80%);
+}
+.nozomi-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+}
+.nozomi-hero-inner { width: 100%; max-width: 1280px; margin-inline: auto; }
+.nozomi-hero-content { width: 47%; max-width: 570px; }
+.nozomi-hero h1 {
+  margin: 24px 0;
+  font-size: clamp(2.6rem, 3.7vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+.nozomi-hero-description { max-width: 480px; font-size: 1.1rem; line-height: 1.75; color: color-mix(in srgb, var(--color-brand-dark) 80%, transparent); }
+.gallery-filter { border: 1px solid color-mix(in srgb, var(--color-primary) 40%, white); border-radius: 999px; padding: 12px 20px; font-size: .875rem; font-weight: 600; transition: background .2s; }
+.gallery-filter:hover { background: var(--color-brand-light); }
+.gallery-filter.active { background: var(--color-primary); border-color: var(--color-primary); }
+.gallery-album { display: flex; flex-direction: column; overflow: hidden; border-radius: 28px; border: 1px solid var(--color-brand-light); background: white; text-align: left; box-shadow: 0 8px 28px #4c051908; transition: box-shadow .2s; }
+.gallery-album:hover { box-shadow: 0 12px 32px #4c051915; }
+.gallery-album:focus-visible, .gallery-filter:focus-visible, .photo-dialog button:focus-visible { outline: 3px solid var(--color-brand-green); outline-offset: 4px; }
+.photo-dialog { position: fixed; inset: 0; margin: auto; padding: 0; border: 0; border-radius: 24px; width: min(1200px, calc(100vw - 48px)); max-width: none; max-height: calc(100svh - 48px); overflow: auto; background: white; }
+.photo-dialog::backdrop { background: #1f0915d9; backdrop-filter: blur(5px); }
+.photo-dialog-inner { display: grid; grid-template-columns: minmax(0, 1fr) 320px; }
+.photo-dialog-main { position: relative; min-width: 0; background: #1f1518; display: flex; align-items: center; justify-content: center; }
+.photo-dialog-main > img { width: 100%; height: min(76svh, 780px); object-fit: contain; }
+.photo-dialog button { cursor: pointer; }
+.photo-dialog-close, .photo-dialog-prev, .photo-dialog-next { position: absolute; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #fffffff2; color: var(--color-brand-dark); box-shadow: 0 2px 12px #0002; }
+.photo-dialog-close { top: 12px; right: 12px; }
+.photo-dialog-prev { top: calc(50% - 22px); left: 12px; }
+.photo-dialog-next { top: calc(50% - 22px); right: 12px; }
+.photo-dialog-info { padding: 64px 24px 24px; }
+.photo-dialog-thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.photo-dialog-thumbs button { overflow: hidden; border: 3px solid transparent; border-radius: 10px; opacity: .65; }
+.photo-dialog-thumbs button[aria-pressed="true"] { border-color: var(--color-primary); opacity: 1; }
+.photo-dialog-thumbs img { width: 100%; height: 60px; object-fit: cover; }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nozomi-hero-content { width: 60%; }
+  .nozomi-hero h1 { font-size: 3rem; }
+}
+@media (max-width: 767px) {
+  .nozomi-hero { padding: 36px 24px 310px; min-height: 800px; align-items: flex-start; }
+  .nozomi-hero-content { width: 100%; max-width: none; }
+  .nozomi-hero h1 { margin: 18px 0; font-size: clamp(2rem, 8vw, 2.7rem); }
+  .nozomi-hero-description { font-size: 1rem; }
+  .nozomi-hero::after { background: linear-gradient(180deg, #fff5f7 0%, #fff5f7fc 40%, #fff5f7eb 50%, #fff5f780 65%, transparent 82%); }
+  .nozomi-hero-photo { top: auto; height: 400px; object-position: 65% center; }
+  .photo-dialog { width: calc(100vw - 24px); max-height: calc(100svh - 24px); border-radius: 18px; }
+  .photo-dialog-inner { grid-template-columns: minmax(0, 1fr); }
+  .photo-dialog-main > img { height: 45svh; }
+  .photo-dialog-info { padding: 24px; }
+  .photo-dialog-thumbs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}

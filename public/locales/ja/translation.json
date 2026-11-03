@@ -9,7 +9,8 @@
     "about": "会社概要",
     "services": "サービス",
     "news": "ニュース",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "gallery": "フォトギャラリー"
   },
   "hero": {
     "badge": "日本からの40年の経験",
@@ -18,7 +19,12 @@
     "cta": "詳しく見る",
     "qr_label": "09240 666 88",
     "stats_label": "ケアの経験",
-    "floating_label": "日本基準のケア - 真心を込めてプロフェッショナルに"
+    "floating_label": "日本基準のケア - 真心を込めてプロフェッショナルに",
+    "values": {
+      "care": "思いやり",
+      "safety": "安心",
+      "connection": "つながり"
+    }
   },
   "services": {
     "badge": "日本基準のサービス",
@@ -210,5 +216,54 @@
       "update": "記事を更新",
       "saving": "保存中..."
     }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "フォトギャラリー",
+      "title": "Nozomi Careの日々を彩る瞬間",
+      "text": "施設やサービス、日々の活動、心に残る交流の様子をご覧ください。"
+    },
+    "categories": {
+      "facilities": "施設・設備",
+      "services": "サービス",
+      "daily": "日々の活動",
+      "events": "イベント"
+    },
+    "previous": "前の写真",
+    "next": "次の写真",
+    "viewImage": "写真{{number}}を見る",
+    "albums": {
+      "spaces": {
+        "title": "施設と設備",
+        "description": "居室、共用スペース、浴室、運動設備をご紹介します。"
+      },
+      "mobility": {
+        "title": "リハビリと歩行支援",
+        "description": "一歩ずつ寄り添う運動指導とサポート。"
+      },
+      "personalCare": {
+        "title": "日常生活と宿泊のケア",
+        "description": "居室での日常生活の支援と、寄り添うひととき。"
+      },
+      "movement": {
+        "title": "毎日の運動",
+        "description": "軽い体操、ボール遊び、グループ活動。"
+      },
+      "everyday": {
+        "title": "日々の暮らしの喜び",
+        "description": "ぬり絵、歌、会話を通して心を通わせる瞬間。"
+      },
+      "gatherings": {
+        "title": "交流と思い出",
+        "description": "ご利用者とスタッフが集い、語り合い、思い出を育む時間。"
+      },
+      "team": {
+        "title": "スタッフと学びの活動",
+        "description": "ケアの現場での実践と学び合い。"
+      }
+    },
+    "all": "すべて",
+    "close": "閉じる",
+    "imagesCount": "{{count}}枚の写真"
   }
 }
