@@ -57,30 +57,7 @@
   },
   "solutions": {
     "title": "ĐỒNG HÀNH TRỌN VẸN TRÊN MỌI HÀNH TRÌNH",
-    "subtitle": "Chúng tôi cung cấp các giải pháp chuyên sâu cho từng giai đoạn",
-    "items": {
-      "rehab": {
-        "title": "PHỤC HỒI CHỨC NĂNG CHUYÊN BIỆT",
-        "description": "Dành cho người sau đột quỵ, phẫu thuật, với Hệ thống máy tập Phục hồi chức năng Polaris tiêu chuẩn Nhật Bản và Huấn luyện viên cá nhân."
-      },
-      "dementia": {
-        "title": "CHĂM SÓC NGƯỜI SA SÚT TRÍ TUỆ",
-        "bullets": [
-          "Không gian mở, an toàn, yên tĩnh.",
-          "Hệ thống tự động giám sát giấc ngủ.",
-          "Nhân sự trực 24/7.",
-          "Các hoạt động trị liệu cảm xúc giúp giảm thiểu các triệu chứng hành vi."
-        ]
-      },
-      "palliative": {
-        "title": "CHĂM SÓC GIAI ĐOẠN CUỐI ĐỜI",
-        "bullets": [
-          "Chăm sóc giảm lo âu, tập trung vào sự thoải mái, bình an.",
-          "Quản lý và theo dõi sức khỏe bởi điều dưỡng viên.",
-          "Kết nối y tế chặt chẽ với bác sĩ và bệnh viện."
-        ]
-      }
-    }
+    "subtitle": "Chăm sóc ban ngày, trải nghiệm và lưu trú phù hợp với nhu cầu của người thân."
   },
   "footer": {
     "links_title": "Liên kết",
@@ -268,5 +245,67 @@
     "all": "Tất cả",
     "close": "Đóng",
     "imagesCount": "{{count}} ảnh"
+  },
+  "carePackages": {
+    "eyebrow": "Các gói dịch vụ",
+    "title": "Chăm sóc phù hợp với mỗi gia đình",
+    "intro": "Từ chăm sóc ban ngày, trải nghiệm chăm sóc và tập luyện đến lưu trú ngắn ngày và dài hạn, Nozomi Care đồng hành cùng gia đình lựa chọn phương án phù hợp với nhu cầu của người thân.",
+    "audienceLabel": "Dịch vụ phù hợp với",
+    "movementLabel": "Phương pháp vận động Polaris Nhật Bản",
+    "detailsLabel": "Tìm hiểu gói dịch vụ",
+    "consultTitle": "Cần tư vấn mô hình chăm sóc phù hợp?",
+    "consultText": "Hãy liên hệ để được tư vấn dịch vụ phù hợp với tình trạng sức khỏe, nhu cầu chăm sóc và mục tiêu vận động của người thân.",
+    "supportTitle": "Nền tảng chăm sóc chuẩn Nhật Bản",
+    "movement": [
+      "Nozomi Care ứng dụng phương pháp vận động Polaris Nhật Bản, kết hợp hệ thống Power Rehab và máy đi bộ P-Walk cùng các bài tập khởi động, vận động nhóm và bài tập phù hợp với khả năng của từng người.",
+      "Hệ thống Power Rehab gồm các thiết bị tập luyện chuyên biệt cho nhiều nhóm cơ và khớp: Hip - máy tập mở rộng khớp hông, Rowing - máy tập khớp vai, Torso - máy tập gập thân trên, Leg - máy tập co duỗi khớp gối, Chest - máy tập ép ngực và Horizon - máy tập ép chân ngang kết hợp với máy đi bộ P-Walk.",
+      "Phương pháp tập sử dụng mức tải nhẹ, động tác lặp lại và có nhịp điệu, hướng tới việc kích hoạt và duy trì hoạt động của các nhóm cơ, từ đó hỗ trợ khả năng thực hiện những vận động quen thuộc trong đời sống.",
+      "Chương trình có thể tập trung vào các năng lực thiết thực như đứng lên - ngồi xuống, đi lại, chuyển hướng, di chuyển, giữ thăng bằng và thực hiện các thao tác sinh hoạt hằng ngày."
+    ],
+    "items": {
+      "daycare": {
+        "title": "Chăm sóc ban ngày – Daycare",
+        "tagline": "Ban ngày an tâm chăm sóc, buổi tối sum vầy bên gia đình.",
+        "description": "Dịch vụ Daycare tại Nozomi Care mang đến môi trường sinh hoạt an toàn, thân thiện cho người cao tuổi trong ngày, khi gia đình bận rộn với công việc. Người cao tuổi được hỗ trợ trong sinh hoạt, dinh dưỡng, nghỉ ngơi, vận động và giao lưu cùng cộng đồng.",
+        "audience": [
+          "Gia đình có người cao tuổi cần được hỗ trợ trong ngày, trong khi con cháu đi làm hoặc bận công việc.",
+          "Nhóm khách hàng là người cao tuổi đang sinh sống tại nhà, có nhu cầu tập luyện, duy trì chức năng vận động, giao lưu và kết nối cộng đồng.",
+          "Người cao tuổi khó khăn trong đi lại, sinh hoạt cần cải thiện chức năng vận động.",
+          "Đặc biệt phù hợp với người sau xuất viện cần tiếp tục phục hồi hoặc người cao tuổi có nguy cơ giảm vận động, ít giao tiếp xã hội."
+        ]
+      },
+      "experience": {
+        "title": "Trải nghiệm chăm sóc và tập luyện",
+        "tagline": "Trải nghiệm thực tế, an tâm trước khi lựa chọn.",
+        "description": "Chương trình trải nghiệm ngắn giờ giúp người cao tuổi làm quen với môi trường Nozomi Care, tìm hiểu các hoạt động chăm sóc và tập luyện phù hợp. Tùy theo thể trạng và kết quả đánh giá, người tham gia có thể trải nghiệm thiết bị tập luyện Polaris dưới sự hướng dẫn của nhân viên chuyên môn.",
+        "audience": [
+          "Gia đình có người cao tuổi cần được hỗ trợ trong ngày, trong khi con cháu đi làm hoặc bận công việc.",
+          "Nhóm khách hàng là người cao tuổi đang sinh sống tại nhà, có nhu cầu tập luyện, duy trì chức năng vận động, giao lưu và kết nối cộng đồng.",
+          "Người cao tuổi khó khăn trong đi lại, sinh hoạt cần cải thiện chức năng vận động.",
+          "Đặc biệt phù hợp với người sau xuất viện cần tiếp tục phục hồi hoặc người cao tuổi có nguy cơ giảm vận động, ít giao tiếp xã hội."
+        ]
+      },
+      "shortStay": {
+        "title": "Lưu trú ngắn ngày",
+        "tagline": "Thêm thời gian trải nghiệm, thêm cơ sở để lựa chọn.",
+        "description": "Dịch vụ lưu trú ngắn ngày tạo điều kiện để người cao tuổi trải nghiệm môi trường sống và chăm sóc tại Nozomi Care trong một khoảng thời gian nhất định. Gia đình có cơ hội tìm hiểu nếp sinh hoạt, chế độ dinh dưỡng, các hoạt động hằng ngày và khả năng thích nghi của người thân trước khi cân nhắc lưu trú lâu dài.",
+        "audience": [
+          "Gia đình muốn người thân trải nghiệm trước khi đăng ký dài hạn.",
+          "Gia đình cần phương án chăm sóc tạm thời khi bận công việc hoặc đi xa.",
+          "Người cao tuổi cần môi trường sinh hoạt có hỗ trợ trong thời gian ngắn."
+        ]
+      },
+      "longStay": {
+        "title": "Chăm sóc và lưu trú dài hạn",
+        "tagline": "Chăm sóc ổn định, đồng hành cùng người cao tuổi mỗi ngày.",
+        "description": "Nozomi Care xây dựng môi trường lưu trú dài hạn với sự hỗ trợ trong sinh hoạt, dinh dưỡng, vận động và giao lưu cộng đồng, dựa trên nhu cầu và khả năng tự chủ của từng người. Đội ngũ chăm sóc phối hợp cùng gia đình để duy trì nếp sống phù hợp, tôn trọng phẩm giá và chất lượng sống của người cao tuổi.",
+        "audience": [
+          "Người cao tuổi cần hỗ trợ thường xuyên trong sinh hoạt.",
+          "Người cần chăm sóc sau đột quỵ, phẫu thuật hoặc điều trị, tùy điều kiện tiếp nhận.",
+          "Người suy giảm nhận thức hoặc cần hỗ trợ tăng cường, theo đánh giá chuyên môn.",
+          "Gia đình tìm kiếm giải pháp chăm sóc ổn định và lâu dài."
+        ]
+      }
+    }
   }
 }

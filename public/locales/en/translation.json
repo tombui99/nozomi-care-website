@@ -57,30 +57,7 @@
   },
   "solutions": {
     "title": "COMPREHENSIVE COMPANIONSHIP ON EVERY JOURNEY",
-    "subtitle": "We provide specialized solutions for each stage",
-    "items": {
-      "rehab": {
-        "title": "SPECIALIZED REHABILITATION",
-        "description": "For post-stroke and post-surgery recovery, featuring the Polaris Rehabilitation System (Japanese standard) and personal trainers."
-      },
-      "dementia": {
-        "title": "DEMENTIA CARE",
-        "bullets": [
-          "Open, safe, and quiet spaces.",
-          "Automatic sleep monitoring system.",
-          "24/7 staffing.",
-          "Emotional therapy activities to minimize behavioral symptoms."
-        ]
-      },
-      "palliative": {
-        "title": "END-OF-LIFE CARE",
-        "bullets": [
-          "Care for anxiety reduction, focusing on comfort and peace.",
-          "Health management and monitoring by nursing staff.",
-          "Close medical connection with doctors and hospitals."
-        ]
-      }
-    }
+    "subtitle": "Daycare, trials and residential care suited to your loved one’s needs."
   },
   "footer": {
     "links_title": "Quick Links",
@@ -268,5 +245,67 @@
     "all": "All",
     "close": "Close",
     "imagesCount": "{{count}} photos"
+  },
+  "carePackages": {
+    "eyebrow": "Care packages",
+    "title": "Care that fits your family",
+    "intro": "From daycare and care and exercise trials to short stays and long-term residential care, Nozomi Care helps families find an approach suited to their loved one’s needs.",
+    "audienceLabel": "Who this service is for",
+    "movementLabel": "The Japanese Polaris exercise approach",
+    "detailsLabel": "Explore this care package",
+    "consultTitle": "Need help choosing a care option?",
+    "consultText": "Contact us to discuss a service suited to your loved one’s health, care needs and mobility goals.",
+    "supportTitle": "Our foundation of Japanese-standard care",
+    "movement": [
+      "Nozomi Care uses the Japanese Polaris exercise approach, combining Power Rehab equipment and the P-Walk treadmill with warm-ups, group movement and exercises adapted to each person’s abilities.",
+      "The Power Rehab system includes specialised equipment for different muscle groups and joints: Hip for hip opening, Rowing for shoulder movement, Torso for upper-body flexion, Leg for knee flexion and extension, Chest for chest presses, and Horizon for horizontal leg presses, alongside the P-Walk treadmill.",
+      "The approach uses light resistance and repeated, rhythmic movements to activate and maintain muscle activity, supporting familiar everyday movements.",
+      "The programme may focus on practical abilities such as standing up and sitting down, walking, changing direction, moving around, maintaining balance and carrying out daily activities."
+    ],
+    "items": {
+      "daycare": {
+        "title": "Daycare",
+        "tagline": "Care and peace of mind by day, family time at night.",
+        "description": "Nozomi Care’s daycare service offers older adults a safe, friendly daytime environment while their families are busy at work. Support includes daily activities, meals, rest, exercise and opportunities to socialise with the community.",
+        "audience": [
+          "Families whose older relatives need daytime support while family members work or attend to other commitments.",
+          "Older adults living at home who want to exercise, maintain mobility, socialise and connect with the community.",
+          "Older adults who have difficulty walking or managing daily activities and need support to improve mobility.",
+          "Particularly suitable for people continuing recovery after hospital discharge, or older adults at risk of reduced mobility or social isolation."
+        ]
+      },
+      "experience": {
+        "title": "Care and exercise trial",
+        "tagline": "Experience the service and choose with confidence.",
+        "description": "This short trial helps older adults get to know Nozomi Care and explore suitable care and exercise activities. Depending on their physical condition and assessment, participants may try Polaris exercise equipment with guidance from trained staff.",
+        "audience": [
+          "Families whose older relatives need daytime support while family members work or attend to other commitments.",
+          "Older adults living at home who want to exercise, maintain mobility, socialise and connect with the community.",
+          "Older adults who have difficulty walking or managing daily activities and need support to improve mobility.",
+          "Particularly suitable for people continuing recovery after hospital discharge, or older adults at risk of reduced mobility or social isolation."
+        ]
+      },
+      "shortStay": {
+        "title": "Short stay",
+        "tagline": "More time to experience, more confidence to choose.",
+        "description": "A short stay lets older adults experience life and care at Nozomi Care for a defined period. Families can learn about daily routines, meals, activities and their loved one’s adjustment before considering a longer stay.",
+        "audience": [
+          "Families who want their loved one to try the service before a long-term stay.",
+          "Families who need temporary care while busy with work or travelling.",
+          "Older adults who need a supported living environment for a short period."
+        ]
+      },
+      "longStay": {
+        "title": "Long-term residential care",
+        "tagline": "Consistent care and companionship, every day.",
+        "description": "Nozomi Care provides a long-term living environment with support for daily activities, nutrition, exercise and community connections, based on each person’s needs and level of independence. Our care team works with families to maintain appropriate routines while respecting older adults’ dignity and quality of life.",
+        "audience": [
+          "Older adults who need regular support with daily activities.",
+          "People who need care after a stroke, surgery or treatment, subject to admission criteria.",
+          "People with cognitive decline or increased support needs, following professional assessment.",
+          "Families looking for a stable, long-term care option."
+        ]
+      }
+    }
   }
 }

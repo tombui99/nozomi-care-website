@@ -1,119 +1,35 @@
-import { getPhoto } from "../photos";
-import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
-import { cn } from "../lib/utils";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { getCarePackages } from "../carePackages";
 
-export const Solutions: React.FC = () => {
-  const { t } = useTranslation();
-
-  const solutionItems = [
-    {
-      id: 1,
-      title: t("solutions.items.rehab.title"),
-      description: t("solutions.items.rehab.description"),
-      image: getPhoto("supported-strength").url,
-      color: "bg-brand-yellow-dark",
-      anchor: "rehab",
-    },
-    {
-      id: 2,
-      title: t("solutions.items.dementia.title"),
-      bullets: t("solutions.items.dementia.bullets", {
-        returnObjects: true,
-      }) as string[],
-      image: getPhoto("conversation-and-laughter").url,
-      color: "bg-primary",
-      anchor: "dementia",
-    },
-    {
-      id: 3,
-      title: t("solutions.items.palliative.title"),
-      bullets: t("solutions.items.palliative.bullets", {
-        returnObjects: true,
-      }) as string[],
-      image: getPhoto("bedside-companionship").url,
-      color: "bg-brand-green",
-      anchor: "palliative",
-    },
-  ];
+export const Solutions = () => {
+  const { t, i18n } = useTranslation();
+  const packages = getCarePackages(t, i18n.resolvedLanguage);
 
   return (
     <section id="solutions" className="bg-white">
-      <div className="max-w-full">
-        <div className="text-center py-20 px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">
-            {t("solutions.title")}
-          </h2>
-          <p className="text-xl text-brand-dark/60">
-            {t("solutions.subtitle")}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 w-full">
-          {solutionItems.map((item, index) => (
-            <Link
-              key={item.id}
-              to={`/services#${item.anchor}`}
-              className="block h-full"
-              aria-label={`Go to ${item.title}`}
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.2,
-                  duration: 0.8,
-                  ease: "easeOut",
-                }}
-                className="flex flex-col group h-full cursor-pointer"
-              >
-                {/* Image Section */}
-                <div className="relative h-100 overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-
-                {/* Text Content Section */}
-                <div
-                  className={cn(
-                    "flex-1 p-12 text-white min-h-100 flex flex-col justify-center",
-                    item.color.startsWith("bg-")
-                      ? item.color
-                      : `bg-linear-to-br ${item.color}`,
-                  )}
-                >
-                  <h3 className="text-2xl font-bold mb-6 leading-tight">
-                    {item.title}
-                  </h3>
-
-                  {item.description && (
-                    <p className="text-lg leading-relaxed opacity-90 mb-8">
-                      {item.description}
-                    </p>
-                  )}
-
-                  {item.bullets && (
-                    <ul className="space-y-4">
-                      {item.bullets.map((bullet, i) => (
-                        <li key={i} className="flex gap-3 text-lg opacity-90">
-                          <Check className="shrink-0 mt-1" size={24} />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </motion.div>
-            </Link>
-          ))}
-        </div>
+      <div className="text-center py-20 px-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-4">{t("solutions.title")}</h2>
+        <p className="text-xl text-brand-dark/60">{t("solutions.subtitle")}</p>
+      </div>
+      <div className="grid md:grid-cols-2 xl:grid-cols-4">
+        {packages.map((item, index) => (
+          <Link key={item.id} to={`/services#${item.id}`} className="group block h-full focus-visible:outline-4 focus-visible:outline-brand-dark focus-visible:-outline-offset-4">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.6 }} className="flex flex-col h-full">
+              <div className="h-72 overflow-hidden">
+                <img src={item.image.url} alt={item.image.alt} width={item.image.width} height={item.image.height} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className={`flex flex-1 flex-col p-7 md:p-8 ${item.color} ${item.key === "experience" ? "text-brand-dark" : "text-white"}`}>
+                <h3 className="text-2xl font-bold mb-4 leading-tight">{item.title}</h3>
+                <p className="font-semibold leading-relaxed mb-4">{item.tagline}</p>
+                <p className="leading-relaxed mb-7 opacity-90">{item.description}</p>
+                <span className="mt-auto inline-flex items-center gap-2 font-bold text-sm">{t("carePackages.detailsLabel")}<ArrowRight size={18} aria-hidden="true" /></span>
+              </div>
+            </motion.div>
+          </Link>
+        ))}
       </div>
     </section>
   );
